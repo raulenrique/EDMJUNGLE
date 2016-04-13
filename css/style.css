@@ -1,0 +1,228 @@
+* {
+  margin: auto 0;
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            }
+
+html, body {
+  height: 100%;
+  width: 100%;
+  position: relative;
+
+}
+
+h1 {
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.section {
+    height: 50%;
+}
+
+/*--------------------------------------------SIDE NAVIGATION BAR-----------------------------------------*/
+
+/* Initial sidebar */
+#sidebar {
+  position: fixed;
+  background-color: #080D33; 
+ left: 0px;  /* start off behind the scenes */
+  /*float: left;*/
+  width: 385px;
+  height: 100%;
+}
+
+#sidebar nav {
+  position:relative;
+  height: 100%;
+}
+
+#sidebar ul {
+
+  list-style: none;
+  /*padding-top: 50px;*/
+  height: 75%;
+  margin: 0 auto;
+  position: absolute;
+}
+
+#sidebar li  {
+/*  border-bottom: 1px solid #636366;*/
+  font-family: 'Rajdhani', sans-serif;
+  height: 4%;
+  padding-bottom: 3px;
+  padding-top: 3px;
+  padding-right: 8em;
+  /*padding-right: 3em;*/
+  text-align: center;
+  margin-top: 18%;
+}
+
+.socialmediaicons i {
+  padding: 0px 8px 0 8px;
+}
+
+
+#sidebar a {
+  color: #fff;
+  font-size: 25px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+#sidebar li a:hover{
+  color:#990000;
+}
+
+
+.icon-close {
+  cursor: pointer;
+  padding-left: 25px;
+  padding-top: 25px;
+  color: #990000;
+  font-size: 60px;
+
+}
+
+.icon-menu {
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 50px;
+  padding-bottom: 25px;
+  padding-left: 25px;
+  padding-top: 25px;
+  text-decoration: none;
+  text-transform: uppercase;
+  position: fixed;
+  width:150px;
+}
+
+.icon-menu i {
+  margin-right: 5px;
+}
+
+
+
+
+
+/*--------------------------------------------CONTENT PAGES-----------------------------------------*/
+
+#content {
+  position: absolute;
+    width:100%;
+    height: 100%;
+    
+}
+
+
+/*--------------------------------------------HOME SECTION------------------------------------------------*/
+.home {
+      position: relative;
+      background-image: url('../images/homepage.jpg');
+      height: 90%;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
+      }
+
+
+/*----------------SECTION ONE PAGE CONTENT----------*/
+.page-content{
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+
+/*----------------HOME BUTTONS & BRAND LOGO DIV------------*/
+.brandAndButtons {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 25%;
+  left: 25%;
+}
+
+/*----------------BRAND LOGO----------*/
+
+.brand-logo {
+  position: absolute; 
+    width: 50%;
+
+}
+
+/*----------------HOME BUTTONS----------*/
+.button {
+  position: absolute;
+  display: inline-block;
+    width: 10%;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    padding: 1.5% 6% 1.5% 6%;
+    border: 0px solid ##280104;
+    border-radius: 7px;
+    background: #bf4a54;
+    color: #ffffff;
+    text-decoration: none;
+    -moz-transform: translateX(0%) translateY(145%);
+    -webkit-transform: translateX(0%) translateY(145%);
+    transform: translateX(0%) translateY(145%);
+}
+
+a#playNow.button {
+  left: 26%; 
+}
+
+a#register.button {
+  left: 51%;
+}
+
+
+
+/*--------------------------------------------NEW TRACKS SECTION------------------------------------------*/
+
+.newTracks {
+  background-color:#140328; 
+    
+}
+
+.browse {
+    background-image: url('../images/section3.jpg');
+        -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
+}
+
+.about {
+    background-color: #140328;
+}
+
+.contact {
+        background-image: url('../images/section5.jpg');
+        -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
+}
+
+.myProfile {
+    background-color: #140328;
+
+}
+
+.controls {
+    position: fixed;
+    padding: 1em;
+    background-color: #fff;
+    border-bottom: 2px solid rgba(0,0,0,.7);
+}
