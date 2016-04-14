@@ -20,10 +20,12 @@ html, body {
 h1 {
     color: white;
     font-family: 'Rajdhani', sans-serif;
+    text-align: center;
+    margin: 0 auto;
 }
 
-.section {
-    height: 50%;
+section {
+    height: 100%;
 }
 
 /*--------------------------------------------SIDE NAVIGATION BAR-----------------------------------------*/
@@ -122,6 +124,15 @@ h1 {
 }
 
 
+
+header {
+
+  font-size: 40px;
+}
+
+
+
+
 /*--------------------------------------------HOME SECTION------------------------------------------------*/
 .home {
       position: relative;
@@ -134,36 +145,43 @@ h1 {
       }
 
 
-/*----------------SECTION ONE PAGE CONTENT----------*/
-.page-content{
-  position: relative;
-  height: 100%;
-  width: 100%;
+/*----------------WRAPPER DIV FOR IMAGE ADND BUTTON ALIGNMENT------------*/
+
+.wrapper {
+    top: 25%;
+    position: relative;
+    left: 25%
+
 }
 
-
-/*----------------HOME BUTTONS & BRAND LOGO DIV------------*/
-.brandAndButtons {
-  position: absolute;
+/*----------------LOGO DIV------------*/
+#brand {
+  position: relative;
   width: 100%;
-  height: 100%;
-  top: 25%;
-  left: 25%;
+
 }
 
 /*----------------BRAND LOGO----------*/
 
 .brand-logo {
-  position: absolute; 
     width: 50%;
-
 }
 
-/*----------------HOME BUTTONS----------*/
-.button {
+/*----------------BUTTONS DIV----------*/
+
+#homeButtons {
   position: absolute;
-  display: inline-block;
+  width: 100%;
+  left: 9%;
+}
+
+
+/*----------------HOME BUTTONS----------*/
+.button1,.button2 {
+  position: relative;
+    display: inline;
     width: 10%;
+    height: 15%;
     font-family: 'Rajdhani', sans-serif;
     font-weight: bold;
     text-align: center;
@@ -173,9 +191,9 @@ h1 {
     background: #bf4a54;
     color: #ffffff;
     text-decoration: none;
-    -moz-transform: translateX(0%) translateY(145%);
+/*    -moz-transform: translateX(0%) translateY(145%);
     -webkit-transform: translateX(0%) translateY(145%);
-    transform: translateX(0%) translateY(145%);
+    transform: translateX(0%) translateY(145%);*/
 }
 
 a#playNow.button {
@@ -194,6 +212,12 @@ a#register.button {
   background-color:#140328; 
     
 }
+
+
+
+
+
+
 
 .browse {
     background-image: url('../images/section3.jpg');
