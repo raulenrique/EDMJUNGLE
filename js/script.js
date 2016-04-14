@@ -1,3 +1,5 @@
+
+/*---------------------------SIDEBAR FUNCTIONS--------------------------------------*/
 /*Push the body and nav over by 285px to reveal sidebar when menu element is clicked*/
 var main = function() {
     $(".icon-menu").click(function() {
@@ -25,40 +27,151 @@ var main = function() {
     })
 };
 
+/*---------------------PREVIOUS NEXT SECTION USING KEYBOARD--------------------------------*/
+
+
 $(document).ready(main);
 
-jQuery(function(n) {
-    var e = n("#section"),
-        t = n("html, body"),
-        o = n(document),
-        i = e.length,
-        c = 0,
-        f = !1,
-        u = function(n) {
-            f = !0, t.animate({
-                scrollTop: e.eq(n).offset().top
-            }, 750, function() {
-                f = !1
-            })
-        },
-        r = function(n) {
-            if (f) return !1;
-            if ("prev" === n && c > 0) c--;
-            else {
-                if (!("next" === n && i - 1 > c)) return !1;
-                c++
-            }
-            u(c)
-        };
-    o.on("click", ".action", function() {
-        r(n(this).data("direction"))
-    }), o.keyup(function(n) {
-        38 === n.keyCode && r("prev"), 40 === n.keyCode && r("next")
-    })
+jQuery(function($) {
+
+    var $sections = $('.section'),
+        $animContainer = $('html, body'),
+        $document = $(document),
+        numSections = $sections.length,
+        currSection = 0,
+        isAnimating = false;
+
+    // Animate to a specific index.
+    var gotoSection = function(index) {
+        isAnimating = true;
+        $animContainer.animate({
+            scrollTop: $sections.eq(index).offset().top
+        }, 750, function() {
+            isAnimating = false;
+        });
+    };
+
+    // Advance to next or previous section.
+    var handleAction = function(direction) {
+        if (isAnimating) {
+            return false;
+        }
+
+        if (direction === 'prev' && currSection > 0) {
+            currSection--;
+        } else if (direction === 'next' && currSection < numSections - 1) {
+            currSection++;
+        } else {
+            return false;
+        } 
+        gotoSection(currSection);
+    };
+
+    // Handle clicks.
+    $document.on('click', '.action', function() {
+        handleAction($(this).data('direction'));
+    });
+
+    // Handle keyboard input.
+    $document.keyup(function(e) {
+        if (e.keyCode === 38) {
+            handleAction('prev');
+        } // Up arrow.
+        if (e.keyCode === 40) {
+            handleAction('next');
+        } // Down arrow.
+    });
+
 });
 
-$(".button2").click(function() {
-    $('html, body').animate({
-        scrollTop: $("#section browse").offset().top
-    }, 3000);
-});
+
+
+/*---------------------CONTACT FORM VALIDATION--------------------------------*/
+
+function addFormValidation(theForm) {
+    if (theForm === null || theForm.tagName.toUpperCase() !== 'FORM') {
+        throw new Error("first parameter to addFormValidation must be a FORM, but got " + theForm.tagName);
+    }
+    theForm.noValidate = true;
+    theForm.addEventListener('submit', function(evt) {
+        if (validateForm(theForm) === false) {
+            evt.preventDefault();
+        }
+    });
+
+    function validateForm(theForm) {
+        var isError = false;
+        var elements = theForm.elements;
+        for (var i = 0; i < elements.length; i += 1) {
+            var isValid = isFieldValid(elements[i]);
+            if (isValid === false) {
+                isError = true;
+            }
+        }
+        return !isError;
+    }
+
+    function isFieldValid(field) {
+        var errorMsg = "";
+        if (!needsToBeValidated(field)) {
+            return true;
+        }
+        if (field.id.length === 0 || field.name.length === 0) {
+            console.error("error: ", field);
+            throw new Error("found a field that is missing an id and/or name attribute. name should be there. id is required for determining the field's error message element.");
+        }
+        var errorSpan = document.querySelector('#' + field.id + '-error');
+
+        if (errorSpan === null) {
+            console.error("error: ", field);
+            throw new Error("could not find the '#" + field.id + "-error' element. It's needed for error messages if #" + field.id + " is ever invalid.");
+        }
+
+        field.classList.remove('invalid');
+        errorSpan.classList.remove('danger');
+        errorSpan.innerHTML = "";
+        // number check
+        if (field.type === "number" & field.min > 0 && parseInt(field.value, 10) < parseInt(field.min, 10)) {
+            errorMsg = "must be" + field.min + "or greater.";
+        }
+        if (field.type === "number" & field.max > 0 && parseInt(field.value, 10) < parseInt(field.max, 10)) {
+            errorMsg = "must be" + field.max + "or less.";
+        }
+
+        // email check ----------------------------------------------------------
+        if (field.type === "email" && !isEmail(field.value)) {
+            errorMsg = "****";
+        }
+
+        // Min and Max length check-----------------------------------------------
+
+        if (field.minLength > 0 && field.value.length < field.minLength) {
+            errorMsg = "Must be " + field.minLength + " or more characters long.";
+        }
+        if (field.maxLength > 0 && field.value.length > field.maxLength) {
+            errorMsg = "Must be " + field.maxLength + " characters or less.";
+        }
+
+        // If this field is required------------------------------------------------
+        if (field.type === "checkbox" && !field.checked) {
+            errorMsg = "This must be checked.";
+        } else if (field.required && field.value.trim() === "") {
+            errorMsg = "****";
+        }
+        if (errorMsg !== "") {
+            errorSpan.innerHTML = errorMsg;
+            field.classList.add('invalid');
+            errorSpan.classList.add('danger');
+            return false; //we found the error and so it is invalid
+        }
+        return true;
+    }
+
+    function needsToBeValidated(field) {
+        return ['submit', 'reset', 'button', 'hidden', 'fieldset'].indexOf(field.type) === -1;
+    }
+
+    function isEmail(input) {
+        return input.match(/^([a-z0-9_.\-+]+)@([\da-z.\-]+)\.([a-z\.]{2,})$/);
+    }
+}

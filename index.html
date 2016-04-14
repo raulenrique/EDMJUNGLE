@@ -20,6 +20,8 @@
     </div> -->
     
 <div id="main">
+<!------------------------------ SIDEBAR NAV ---------------------------------------------------->
+
         <div id="sidebar">
             <nav>
             <div class="icon-close"><i class="fa fa-times"></i></div>
@@ -35,6 +37,8 @@
             </nav>
         </div><!-- /sidebar -->
     <div id="content">
+    <!---------------------------------- HOME -------------------------------------------->
+
         <section id="section home" class="section home">
                     <div class="icon-menu">
                         <i class="fa fa-bars"></i>
@@ -51,21 +55,74 @@
                     </div>
         </section>
 
+    <!---------------------------------- NEW TRACKS -------------------------------------------->
+
+
         <section id="section newTracks" class="section newTracks">
             <br><br><header><h1>NEW TRACKS</h1></header>
         </section>
+
+
+    <!---------------------------------- BROWSE -------------------------------------------->
+
+
+
 
         <section id="section browse" class="section browse">
            <br><br> <header><h1>BROWSE</h1></header>
         </section>
 
+    <!---------------------------------- ABOUT -------------------------------------------->
+
+
+
         <section id="section about" class="section about">
            <br><br> <header><h1>ABOUT</h1></header>
         </section>
 
+
+    <!---------------------------------- CONTACT US-------------------------------------------->
+
+
+
         <section id="section contact" class="section contact">
-          <br><br> <header><h1>CONTACT US</h1></header><div class="wrapper"></div>
+          <br><br> <header><h1>CONTACT US</h1></header>
+          <div class="wrapper">
+              <form id="contact-form" method="POST" action="success.html">
+           <h2>Get in touch with us</h2>
+           <div class="contact-form">
+           <div class="form-group">
+                <label for="contactfullname"><strong>Full Name</strong></label><br>
+                    <input id="contactfullname" type="text" name="contactfullname" required>
+                <span id="contactfullname-error"></span>
+             </div>
+
+             <div class="form-group">
+                 <label for="contactemail"><strong>Email Address</strong></label><br>
+                    <input id="contactemail" type="text" name="contactemail" required>
+                <span id="contactemail-error"></span>
+             </div>
+
+             <div class="form-group">
+                  <label for="message"><strong>Your Message</strong></label><br>
+                    <textarea id="message" name="message" rows="15" cols="40" required minlength="10" maxLength="500"></textarea>
+             </div>
+
+             </div>
+
+             <div class="button">
+                <div class="form-group">
+                    <input type="submit" value="Send">
+                <span id="message-error"></span>
+                 </div>
+             </div>
+        </form>
+          </div>
         </section>
+
+
+<!---------------------------------- NEW TRACKS -------------------------------------------->
+
 
         <section id="section myProfile" class="section myProfile">
            <br><br> <header><h1>MY PROFILE</h1></header>
