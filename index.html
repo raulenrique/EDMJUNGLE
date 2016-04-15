@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>EDM JUNGLE</title>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400;300|Poppins:500|Rajdhani' rel='stylesheet' type='text/css'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
     <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -13,11 +14,6 @@
 
 
 <body>
-    <!-- <div class="controls">
-        <span>Up/down arrows also work.</span> <button class="action"
-        data-direction="prev">Prev</button> <button class="action"
-        data-direction="next">Next</button>
-    </div> -->
     
 <div id="main">
 <!------------------------------ SIDEBAR NAV ---------------------------------------------------->
@@ -43,7 +39,7 @@
                     <div class="icon-menu">
                         <i class="fa fa-bars"></i>
                     </div>
-                    <div class="wrapper">
+                    <div class="wrapper1">
                     <div id="brand">
                         <img class="brand-logo" src="images/brandlogobig.png">
                     </div>
@@ -88,35 +84,111 @@
         <section id="section contact" class="section contact">
           <br><br> <header><h1>CONTACT US</h1></header>
           <div class="wrapper">
-              <form id="contact-form" method="POST" action="success.html">
-           <h2>Get in touch with us</h2>
-           <div class="contact-form">
-           <div class="form-group">
-                <label for="contactfullname"><strong>Full Name</strong></label><br>
-                    <input id="contactfullname" type="text" name="contactfullname" required>
-                <span id="contactfullname-error"></span>
-             </div>
+<!------------------------------ CONTACT FORM ---------------------------------------------------->
 
-             <div class="form-group">
-                 <label for="contactemail"><strong>Email Address</strong></label><br>
-                    <input id="contactemail" type="text" name="contactemail" required>
-                <span id="contactemail-error"></span>
-             </div>
+ <section class="section1 clearfix">
+                <div class="textcenter">
+                    <h1>Say Hello</h1>
+                </div>
+            </section>
 
-             <div class="form-group">
-                  <label for="message"><strong>Your Message</strong></label><br>
-                    <textarea id="message" name="message" rows="15" cols="40" required minlength="10" maxLength="500"></textarea>
-             </div>
 
-             </div>
+            <section class="section2 clearfix">
+                <div class="col2 column1 first">
+                    <script src=
+                    'https://maps.googleapis.com/maps/api/js?v=3.exp'>
+                    </script>
 
-             <div class="button">
-                <div class="form-group">
-                    <input type="submit" value="Send">
-                <span id="message-error"></span>
-                 </div>
-             </div>
-        </form>
+                    <div class="sec2map" style=
+                    'overflow:hidden;height:550px;width:100%;'>
+                        <div id='gmap_canvas' style='height:100%;width:100%;'>
+                        </div>
+
+
+                        <style>
+                        #gmap_canvas img{max-width:none!important;background:none!important}
+                        </style>
+                    </div>
+
+                    <script type='text/javascript'>
+                        function init_map() {
+                            var myOptions = {
+                                zoom: 14,
+                                center: new google.maps.LatLng(38.908650, 1.437419),
+                                mapTypeId: google.maps.MapTypeId.ROADMAP
+                            };
+                            map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
+                            marker = new google.maps.Marker({
+                                map: map,
+                                position: new google.maps.LatLng(38.908650, 1.437419)
+                            });
+                            infowindow = new google.maps.InfoWindow({
+                                content: '<strong>EDM JUNGLE - Main Office<\/strong><br>Ibiza, Spain<br>'
+                            });
+                            google.maps.event.addListener(marker, 'click', function() {
+                                infowindow.open(map, marker);
+                            });
+                            infowindow.open(map, marker);
+                        }
+                        google.maps.event.addDomListener(window, 'load', init_map);
+                    </script>
+
+                </div>
+
+
+                <div class="col2 column2 last">
+                    <div class="sec2innercont">
+                        <div class="sec2addr">
+                            <p>Show us some L.O.V.E. Tell us what ya think :)</p>
+
+
+                            <p><span class="collig">Facebook :</span> www.Facebook.com/edmjungle
+
+
+                            <p><span class="collig">Email :</span>
+                            youredmjungle@gmail.com</p>
+
+
+                            <p><span class="collig">Youtube :</span> www.Twitter.com/edmjungle</p>
+                        </div>
+                    </div>
+
+
+                    <div class="sec2contactform">
+                        <h3 class="sec2frmtitle">Hit us up!! We LOVE your messages</h3>
+
+
+                        <form action="">
+                            <div class="clearfix">
+                                <input class="col2 first" placeholder=
+                                "First Name" type="text"> <input class=
+                                "col2 last" placeholder="Last Name" type="text">
+                            </div>
+
+
+                            <div class="clearfix">
+                                <input class="col2 first" placeholder="Email"
+                                type="email"> <input class="col2 last"
+                                placeholder="Favourite Genre" type="text">
+                            </div>
+
+
+                            <div class="clearfix">
+                                <textarea cols="30" id="" name="textarea" rows=
+                                "7">Your message here...</textarea>
+                            </div>
+
+
+                            <div class="clearfix">
+                                <input type="submit" value="Send">
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+
           </div>
         </section>
 
