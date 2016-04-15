@@ -1,30 +1,68 @@
 
 /*---------------------------SIDEBAR FUNCTIONS--------------------------------------*/
 /*Push the body and nav over by 285px to reveal sidebar when menu element is clicked*/
+// var main = function() {
+//     $(".icon-menu").click(function() {
+//         $("#sidebar").animate({
+//             left: "0px"
+//         }, 200), $("body").animate({
+//             left: "285px"
+//         }, 200)
+//     }), 
+// /*...and then 'hide' sidebar when close element is clicked */ 
+//     $(".icon-close").click(function() {
+//         $("#sidebar").animate({
+//             left: "-285px"
+//         }, 200), $("body").animate({
+//             left: "0px"
+//         }, 200)
+//     }), 
+// /*...also hide side bar when link is clicked to reveal 100% of page */ 
+//     $("#sidebar li").click(function() {
+//         $("#sidebar").animate({
+//             left: "-285px"
+//         }, 200), $("body").animate({
+//             left: "0px"
+//         }, 200)
+//     })
+// };
+
+
+
 var main = function() {
-    $(".icon-menu").click(function() {
-        $("#sidebar").animate({
-            left: "0px"
-        }, 200), $("body").animate({
-            left: "285px"
-        }, 200)
-    }), 
-/*...and then 'hide' sidebar when close element is clicked */ 
-    $(".icon-close").click(function() {
-        $("#sidebar").animate({
-            left: "-285px"
-        }, 200), $("body").animate({
-            left: "0px"
-        }, 200)
-    }), 
-/*...also hide side bar when link is clicked to reveal 100% of page */ 
-    $("#sidebar li").click(function() {
-        $("#sidebar").animate({
-            left: "-285px"
-        }, 200), $("body").animate({
-            left: "0px"
-        }, 200)
-    })
+  $('.icon-menu').click(function() {
+    $('#sidebar').animate({
+      left: "0px"
+    }, 200);
+
+    $('body').animate({
+      left: "285px"
+    }, 200);
+  });
+
+  /* Then push them back */
+  $('.icon-close').click(function() {
+    $('#sidebar').animate({
+      left: "-285px"
+    }, 200);
+
+    $('body').animate({
+      left: "0px"
+    }, 200);
+  });
+
+/* Then push them back */
+  $('#sidebar li').click(function() {
+    $('.menu').animate({
+      left: "-285px"
+    }, 200);
+
+    $('body').animate({
+      left: "0px"
+    }, 200);
+  });
+
+
 };
 
 /*---------------------PREVIOUS NEXT SECTION USING KEYBOARD--------------------------------*/
@@ -88,90 +126,3 @@ jQuery(function($) {
 
 /*---------------------CONTACT FORM VALIDATION--------------------------------*/
 
-function addFormValidation(theForm) {
-    if (theForm === null || theForm.tagName.toUpperCase() !== 'FORM') {
-        throw new Error("first parameter to addFormValidation must be a FORM, but got " + theForm.tagName);
-    }
-    theForm.noValidate = true;
-    theForm.addEventListener('submit', function(evt) {
-        if (validateForm(theForm) === false) {
-            evt.preventDefault();
-        }
-    });
-
-    function validateForm(theForm) {
-        var isError = false;
-        var elements = theForm.elements;
-        for (var i = 0; i < elements.length; i += 1) {
-            var isValid = isFieldValid(elements[i]);
-            if (isValid === false) {
-                isError = true;
-            }
-        }
-        return !isError;
-    }
-
-    function isFieldValid(field) {
-        var errorMsg = "";
-        if (!needsToBeValidated(field)) {
-            return true;
-        }
-        if (field.id.length === 0 || field.name.length === 0) {
-            console.error("error: ", field);
-            throw new Error("found a field that is missing an id and/or name attribute. name should be there. id is required for determining the field's error message element.");
-        }
-        var errorSpan = document.querySelector('#' + field.id + '-error');
-
-        if (errorSpan === null) {
-            console.error("error: ", field);
-            throw new Error("could not find the '#" + field.id + "-error' element. It's needed for error messages if #" + field.id + " is ever invalid.");
-        }
-
-        field.classList.remove('invalid');
-        errorSpan.classList.remove('danger');
-        errorSpan.innerHTML = "";
-        // number check
-        if (field.type === "number" & field.min > 0 && parseInt(field.value, 10) < parseInt(field.min, 10)) {
-            errorMsg = "must be" + field.min + "or greater.";
-        }
-        if (field.type === "number" & field.max > 0 && parseInt(field.value, 10) < parseInt(field.max, 10)) {
-            errorMsg = "must be" + field.max + "or less.";
-        }
-
-        // email check ----------------------------------------------------------
-        if (field.type === "email" && !isEmail(field.value)) {
-            errorMsg = "****";
-        }
-
-        // Min and Max length check-----------------------------------------------
-
-        if (field.minLength > 0 && field.value.length < field.minLength) {
-            errorMsg = "Must be " + field.minLength + " or more characters long.";
-        }
-        if (field.maxLength > 0 && field.value.length > field.maxLength) {
-            errorMsg = "Must be " + field.maxLength + " characters or less.";
-        }
-
-        // If this field is required------------------------------------------------
-        if (field.type === "checkbox" && !field.checked) {
-            errorMsg = "This must be checked.";
-        } else if (field.required && field.value.trim() === "") {
-            errorMsg = "****";
-        }
-        if (errorMsg !== "") {
-            errorSpan.innerHTML = errorMsg;
-            field.classList.add('invalid');
-            errorSpan.classList.add('danger');
-            return false; //we found the error and so it is invalid
-        }
-        return true;
-    }
-
-    function needsToBeValidated(field) {
-        return ['submit', 'reset', 'button', 'hidden', 'fieldset'].indexOf(field.type) === -1;
-    }
-
-    function isEmail(input) {
-        return input.match(/^([a-z0-9_.\-+]+)@([\da-z.\-]+)\.([a-z\.]{2,})$/);
-    }
-}

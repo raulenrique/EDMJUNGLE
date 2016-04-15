@@ -10,12 +10,26 @@
             box-sizing: border-box;
             }
 
+.clearfix:before, .clearfix:after { display: table; content: ''; }
+.clearfix:after { clear: both; }
+
 html, body {
   height: 100%;
   width: 100%;
   position: relative;
+/*  overflow-x: hidden;
+  overflow-y: auto;*/
 
 }
+
+/*#main {
+ position: absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    overflow:hidden;
+}*/
 
 h1 {
     color: white;
@@ -26,6 +40,8 @@ h1 {
 
 section {
     height: 100%;
+    width: 100%;
+    overflow: hidden;
 }
 
 /*--------------------------------------------SIDE NAVIGATION BAR-----------------------------------------*/
@@ -36,7 +52,7 @@ section {
   background-color: #080D33; 
  left: 0px;  /* start off behind the scenes */
   /*float: left;*/
-  width: 385px;
+  width: 285px;
   height: 100%;
 }
 
@@ -60,7 +76,8 @@ section {
   height: 4%;
   padding-bottom: 3px;
   padding-top: 3px;
-  padding-right: 8em;
+ /* padding-right: 8em;*/
+  padding-left: 1em;
   /*padding-right: 3em;*/
   text-align: center;
   margin-top: 18%;
@@ -104,6 +121,9 @@ section {
   text-transform: uppercase;
   position: fixed;
   width:150px;
+  z-index: 1;
+/*  top: 0;
+  left: 0;*/
 }
 
 .icon-menu i {
@@ -124,13 +144,16 @@ section {
 }
 
 
-
 header {
 
   font-size: 40px;
+
 }
 
-
+/*.wrapper {
+ top: 25%;
+    position: relative;
+}*/
 
 
 /*--------------------------------------------HOME SECTION------------------------------------------------*/
@@ -147,10 +170,9 @@ header {
 
 /*----------------WRAPPER DIV FOR IMAGE ADND BUTTON ALIGNMENT------------*/
 
-.wrapper {
+.wrapper1 {
     top: 25%;
     position: relative;
-    left: 25%
 
 }
 
@@ -158,13 +180,14 @@ header {
 #brand {
   position: relative;
   width: 100%;
-
+  left:25%;
 }
 
 /*----------------BRAND LOGO----------*/
 
 .brand-logo {
     width: 50%;
+    
 }
 
 /*----------------BUTTONS DIV----------*/
@@ -172,21 +195,16 @@ header {
 #homeButtons {
   position: absolute;
   width: 100%;
-  left: 9%;
+  text-align: center;
 }
 
 
 /*----------------HOME BUTTONS----------*/
 .button1,.button2 {
-  position: relative;
-    display: inline;
-    width: 10%;
-    height: 15%;
     font-family: 'Rajdhani', sans-serif;
     font-weight: bold;
     text-align: center;
-    padding: 1.5% 6% 1.5% 6%;
-    border: 0px solid ##280104;
+    padding: 1.5% 8% 1.5% 8%;
     border-radius: 7px;
     background: #bf4a54;
     color: #ffffff;
@@ -194,14 +212,6 @@ header {
 /*    -moz-transform: translateX(0%) translateY(145%);
     -webkit-transform: translateX(0%) translateY(145%);
     transform: translateX(0%) translateY(145%);*/
-}
-
-a#playNow.button {
-  left: 26%; 
-}
-
-a#register.button {
-  left: 51%;
 }
 
 
@@ -215,8 +225,7 @@ a#register.button {
 
 
 
-
-
+/*--------------------------------------------BROWSE SECTION------------------------------------------*/
 
 
 .browse {
@@ -227,9 +236,20 @@ a#register.button {
           background-size: cover;
 }
 
+
+
+/*--------------------------------------------ABOUT SECTION------------------------------------------*/
+
+
+
 .about {
     background-color: #140328;
 }
+
+
+/*--------------------------------------------CONTACT SECTION------------------------------------------*/
+
+
 
 .contact {
         background-image: url('../images/section5.jpg');
@@ -237,16 +257,176 @@ a#register.button {
      -moz-background-size: cover;
        -o-background-size: cover;
           background-size: cover;
+
+
 }
+
+/*----------------CONTACT FORM----------*/
+
+
+
+input:focus, textarea:focus, keygen:focus, select:focus {
+  outline: none;
+}
+::-moz-placeholder {
+  color: #666;
+  font-weight: 300;
+  opacity: 1;
+}
+
+::-webkit-input-placeholder {
+  color: #666;
+  font-weight: 300;
+}
+
+.container {
+  padding: 0 50px 70px;
+}
+.textcenter {
+  text-align: center;
+}
+.section1 {
+  text-align: center;
+  display: table;
+  width: 100%;
+}
+.section1 .shtext {
+  display: block;
+  margin-top: 20px;
+}
+.section1 .seperator {
+  border-bottom:1px solid #a2a2a2;
+  width: 35px;
+  display: inline-block;
+  margin: 20px;
+}
+
+.section1 h1 {
+  font-size: 40px;
+  color: #A44DD8;
+  font-weight: normal;
+}
+
+.section2 {
+    width: 1200px;
+    margin: 25px auto;
+}
+.section2 .col2 {
+  width: 48.71%;
+}
+.section2 .col2.first {
+  float: left;
+}
+.section2 .col2.last {
+  float: right;
+}
+.section2 .col2.column2 {
+  padding: 0 30px;
+}
+.section2 span.collig {
+  color: #a2a2a2;
+  margin-right: 10px;
+  display: inline-block;
+}
+.section2 .sec2addr {
+  display: block;
+  line-height: 26px;
+}
+.section2 .sec2addr p:first-child {
+  margin-bottom: 10px;
+}
+.section2 .sec2contactform input[type="text"], 
+.section2 .sec2contactform input[type="email"],
+.section2 .sec2contactform textarea {
+    padding: 18px;
+    border: 0;
+    background: #EDEDED;
+    margin: 7px 0;
+}
+.section2 .sec2contactform textarea {
+  width: 100%;
+  display: block;
+  color: #666;
+  resize:none;
+}
+.section2 .sec2contactform input[type="submit"] {
+  padding: 15px 40px;
+    color: #fff;
+    border: 0;
+    background: #A44DD8;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin: 7px 0;
+    cursor: pointer;
+}
+.section2 .sec2contactform h3 {
+  font-weight: normal;
+    margin: 20px 0;
+    margin-top: 30px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 19px;
+    color: #A44DD8;
+}
+
+/*----------------MEDIA QUERIES----------*/
+
+
+@media only screen and (max-width: 1266px) {
+  .section2 {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 960px) {
+  .container {
+    padding: 0 30px 70px;
+  }
+  .section2 .col2 {
+    width: 100%;
+    display: block;
+  }
+  .section2 .col2.first {
+    margin-bottom: 10px;
+  }
+  .section2 .col2.column2 {
+    padding: 0;
+  }
+  body .sec2map {
+    height: 250px !important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .section2 .sec2addr {
+    font-size: 14px;
+  }
+  .section2 .sec2contactform h3 {
+    font-size: 16px;
+  }
+  .section2 .sec2contactform input[type="text"], .section2 .sec2contactform input[type="email"], .section2 .sec2contactform textarea {
+    padding: 10px;
+    margin:3px 0;
+  }
+  .section2 .sec2contactform input[type="submit"] {
+    padding: 10px 30px;
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .section1 h1 {
+    font-size: 28px;
+  } 
+}
+
+
+
+
+
+
+/*--------------------------------------------MY PROFILE------------------------------------------*/
+
 
 .myProfile {
     background-color: #140328;
 
 }
 
-.controls {
-    position: fixed;
-    padding: 1em;
-    background-color: #fff;
-    border-bottom: 2px solid rgba(0,0,0,.7);
-}
+
