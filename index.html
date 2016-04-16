@@ -23,187 +23,135 @@
             <div class="icon-close"><i class="fa fa-times"></i></div>
                 <ul>
                     <li><a href="#section home">Home</a></li>
-                    <li><a href="#section newTracks">New Tracks</a></li>
-                    <li><a href="#section browse">Browse</a></li>
-                    <li><a href="#section about">About</a></li>
-                    <li><a href="#section contact">Contact</a></li>
-                    <li><a href="#section myProfile">My Profile</a></li>
+                    <li><a href="#section music">Music</a></li>
+                    <li><a href="#section charts">Charts</a></li>
+                    <li><a href="#section playlists">Playlists</a></li>
+                    <li><a href="#section contact">Contact Us</a></li>
                     <li><div class="socialmediaicons"><a href="#"><i class="fa fa-facebook-square fa-2x"></i></a><a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a><a href="#"><i class="fa fa-twitch fa-2x"></i></a></div></li>
                 </ul>
             </nav>
         </div><!-- /sidebar -->
     <div id="content">
+
     <!---------------------------------- HOME -------------------------------------------->
 
-        <section id="section home" class="section home">
-                    <div class="icon-menu">
-                        <i class="fa fa-bars"></i>
-                    </div>
-                    <div class="wrapper1">
-                    <div id="brand">
-                        <img class="brand-logo" src="images/brandlogobig.png">
-                    </div>
-                    <br><br>
-                    <div id="homeButtons">
-                        <a class="button1" href="#section newTracks"><i class="fa fa-headphones" aria-hidden="true"></i> New Tracks</a>
-                        <a class="button2" href="#section browse"><i class="fa fa-play" aria-hidden="true"></i> Listen Now</a>
-                    </div>
-                    </div>
+<section id="section home" class="section home">
+    <div class="icon-menu">
+        <i class="fa fa-bars"></i>
+    </div>
+    <div class="wrapper1">
+        <div id="brand">
+            <img class="brand-logo" src="images/brandlogobig.png">
+        </div>
+        <br>
+        <br>
+        <div id="homeButtons">
+            <a class="button1" href="#section newTracks"><i class="fa fa-headphones" aria-hidden="true"></i>New Tracks</a>
+            <a class="button2" href="#section browse"><i class="fa fa-play" aria-hidden="true"></i>Listen Now</a>
+        </div>
+    </div>
+</section>
+
+    <!---------------------------------- MUSIC -------------------------------------------->
+
+
+        <section id="section music" class="section music">
+            <br><br><header><h1>MUSIC</h1></header>
         </section>
 
-    <!---------------------------------- NEW TRACKS -------------------------------------------->
+
+    <!---------------------------------- CHARTS -------------------------------------------->
 
 
-        <section id="section newTracks" class="section newTracks">
-            <br><br><header><h1>NEW TRACKS</h1></header>
+
+        <section id="section charts" class="section charts">
+           <br><br> <header><h1>CHARTS</h1></header>
         </section>
 
 
-    <!---------------------------------- BROWSE -------------------------------------------->
-
-
-
-
-        <section id="section browse" class="section browse">
-           <br><br> <header><h1>BROWSE</h1></header>
-        </section>
-
-    <!---------------------------------- ABOUT -------------------------------------------->
-
-
-
-        <section id="section about" class="section about">
-           <br><br> <header><h1>ABOUT</h1></header>
-        </section>
 
 
     <!---------------------------------- CONTACT US-------------------------------------------->
 
 
-
         <section id="section contact" class="section contact">
-          <br><br> <header><h1>CONTACT US</h1></header>
-          <div class="wrapper">
-<!------------------------------ CONTACT FORM ---------------------------------------------------->
+            <br>
+            <br>
+            <header>
+                <h1>CONTACT US</h1>
+            </header>
+            <div class="wrapper">
 
- <section class="section1 clearfix">
-                <div class="textcenter">
-                    <h1>Say Hello</h1>
-                </div>
-            </section>
+                <div id="map"></div>
+
+                <div id="detailsAndForm">
+                    <div class="contactDetails">
 
 
-            <section class="section2 clearfix">
-                <div class="col2 column1 first">
-                    <script src=
-                    'https://maps.googleapis.com/maps/api/js?v=3.exp'>
-                    </script>
+                        <p><span class="socialLinks">Facebook :</span> www.Facebook.com/edmjungle
 
-                    <div class="sec2map" style=
-                    'overflow:hidden;height:550px;width:100%;'>
-                        <div id='gmap_canvas' style='height:100%;width:100%;'>
+
+                            <p><span class="socialLinks">Email :</span> youredmjungle@gmail.com
+                            </p>
+
+
+                            <p><span class="socialLinks">Twitter :</span> www.Twitter.com/edmjungle</p>
+                    </div>
+
+
+                    <form id="contact-form" method="POST" action="success.html">
+                        <div class="contact-form">
+                            <div class="form-group">
+                                <label for="contactfullname"><strong></strong>
+                                </label>
+                                <br>
+                                <input id="contactfullname" type="text" placeholder="Full Name" name="contactfullname" required >
+                                <span id="contactfullname-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contactemail"><strong></strong>
+                                </label>
+                                <br>
+                                <input id="contactemail" type="text" placeholder="Email Address" name="contactemail" required>
+                                <span id="contactemail-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message"><strong></strong>
+                                </label>
+                                <br>
+                                <textarea id="message" name="message" rows="15" cols="40" placeholder="Your message here..." required minlength="10" maxLength="500"></textarea>
+                            </div>
+
                         </div>
 
-
-                        <style>
-                        #gmap_canvas img{max-width:none!important;background:none!important}
-                        </style>
-                    </div>
-
-                    <script type='text/javascript'>
-                        function init_map() {
-                            var myOptions = {
-                                zoom: 14,
-                                center: new google.maps.LatLng(38.908650, 1.437419),
-                                mapTypeId: google.maps.MapTypeId.ROADMAP
-                            };
-                            map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
-                            marker = new google.maps.Marker({
-                                map: map,
-                                position: new google.maps.LatLng(38.908650, 1.437419)
-                            });
-                            infowindow = new google.maps.InfoWindow({
-                                content: '<strong>EDM JUNGLE - Main Office<\/strong><br>Ibiza, Spain<br>'
-                            });
-                            google.maps.event.addListener(marker, 'click', function() {
-                                infowindow.open(map, marker);
-                            });
-                            infowindow.open(map, marker);
-                        }
-                        google.maps.event.addDomListener(window, 'load', init_map);
-                    </script>
-
-                </div>
-
-
-                <div class="col2 column2 last">
-                    <div class="sec2innercont">
-                        <div class="sec2addr">
-                            <p>Show us some L.O.V.E. Tell us what ya think :)</p>
-
-
-                            <p><span class="collig">Facebook :</span> www.Facebook.com/edmjungle
-
-
-                            <p><span class="collig">Email :</span>
-                            youredmjungle@gmail.com</p>
-
-
-                            <p><span class="collig">Youtube :</span> www.Twitter.com/edmjungle</p>
+                        <div class="button">
+                            <div class="form-group">
+                                <input id= "button" type="submit" value="Send">
+                                <span id="message-error"></span>
+                            </div>
                         </div>
-                    </div>
-
-
-                    <div class="sec2contactform">
-                        <h3 class="sec2frmtitle">Hit us up!! We LOVE your messages</h3>
-
-
-                        <form action="">
-                            <div class="clearfix">
-                                <input class="col2 first" placeholder=
-                                "First Name" type="text"> <input class=
-                                "col2 last" placeholder="Last Name" type="text">
-                            </div>
-
-
-                            <div class="clearfix">
-                                <input class="col2 first" placeholder="Email"
-                                type="email"> <input class="col2 last"
-                                placeholder="Favourite Genre" type="text">
-                            </div>
-
-
-                            <div class="clearfix">
-                                <textarea cols="30" id="" name="textarea" rows=
-                                "7">Your message here...</textarea>
-                            </div>
-
-
-                            <div class="clearfix">
-                                <input type="submit" value="Send">
-
-                            </div>
-                        </form>
-                    </div>
+                    </form>
                 </div>
-            </section>
-
-
-          </div>
+            </div>
         </section>
 
 
-<!---------------------------------- NEW TRACKS -------------------------------------------->
+<!---------------------------------- PLAYLISTS -------------------------------------------->
 
 
-        <section id="section myProfile" class="section myProfile">
-           <br><br> <header><h1>MY PROFILE</h1></header>
+        <section id="section playlists" class="section playlists">
+           <br><br> <header><h1>PLAYLISTS</h1></header>
         </section>
+
+
     </div><!-- /#content -->
 </div><!-- /.MAIN-->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> 
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
     <script src="js/script.js" type="text/javascript"></script>
 </body>
 </html>

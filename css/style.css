@@ -13,6 +13,26 @@
 .clearfix:before, .clearfix:after { display: table; content: ''; }
 .clearfix:after { clear: both; }
 
+
+  input::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
+  input::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease;}
+  input:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
+  input:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease;}
+  input:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+  input:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+  input:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
+  input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+
+  textarea::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
+  textarea::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease;}
+  textarea:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
+  textarea:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease;}
+  textarea:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+  textarea:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+  textarea:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
+  textarea:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+
+
 html, body {
   height: 100%;
   width: 100%;
@@ -39,9 +59,8 @@ h1 {
 }
 
 section {
-    height: 100%;
-    width: 100%;
     overflow: hidden;
+    position: relative;
 }
 
 /*--------------------------------------------SIDE NAVIGATION BAR-----------------------------------------*/
@@ -131,16 +150,12 @@ section {
 }
 
 
-
-
-
 /*--------------------------------------------CONTENT PAGES-----------------------------------------*/
 
 #content {
   position: absolute;
     width:100%;
     height: 100%;
-    
 }
 
 
@@ -150,10 +165,13 @@ header {
 
 }
 
-/*.wrapper {
- top: 25%;
-    position: relative;
-}*/
+.wrapper {
+ 
+ margin: 0 auto;
+ width: 90%;
+ position: relative;
+ padding-bottom: 6%;
+}
 
 
 /*--------------------------------------------HOME SECTION------------------------------------------------*/
@@ -196,6 +214,7 @@ header {
   position: absolute;
   width: 100%;
   text-align: center;
+  display: inline-block;
 }
 
 
@@ -203,23 +222,20 @@ header {
 .button1,.button2 {
     font-family: 'Rajdhani', sans-serif;
     font-weight: bold;
-    text-align: center;
+   /* text-align: center;*/
     padding: 1.5% 8% 1.5% 8%;
     border-radius: 7px;
     background: #bf4a54;
     color: #ffffff;
     text-decoration: none;
-/*    -moz-transform: translateX(0%) translateY(145%);
-    -webkit-transform: translateX(0%) translateY(145%);
-    transform: translateX(0%) translateY(145%);*/
 }
 
 
 
 /*--------------------------------------------NEW TRACKS SECTION------------------------------------------*/
 
-.newTracks {
-  background-color:#140328; 
+.music {
+  background-color:#B8B2BA; 
     
 }
 
@@ -228,12 +244,13 @@ header {
 /*--------------------------------------------BROWSE SECTION------------------------------------------*/
 
 
-.browse {
-    background-image: url('../images/section3.jpg');
+.charts {
+/*    background-image: url('../images/section3.jpg');
         -webkit-background-size: cover;
      -moz-background-size: cover;
        -o-background-size: cover;
-          background-size: cover;
+          background-size: cover;*/
+          background-color: #982262;
 }
 
 
@@ -242,7 +259,7 @@ header {
 
 
 
-.about {
+.playlists {
     background-color: #140328;
 }
 
@@ -252,11 +269,12 @@ header {
 
 
 .contact {
-        background-image: url('../images/section5.jpg');
+/*        background-image: url('../images/section5.jpg');
         -webkit-background-size: cover;
      -moz-background-size: cover;
        -o-background-size: cover;
-          background-size: cover;
+          background-size: cover;*/
+          background-color: #B81739;
 
 
 }
@@ -268,153 +286,91 @@ header {
 input:focus, textarea:focus, keygen:focus, select:focus {
   outline: none;
 }
+
+
 ::-moz-placeholder {
+  font-family: 'Rajdhani', sans-serif;
   color: #666;
-  font-weight: 300;
+  font-weight: 500;
   opacity: 1;
 }
 
+
 ::-webkit-input-placeholder {
+  font-family: 'Rajdhani', sans-serif;
   color: #666;
-  font-weight: 300;
+  font-weight: 500;
 }
 
-.container {
-  padding: 0 50px 70px;
+#map {
+   height: 500px;
+   width: 40%;
+   display: inline-block;
+     }
+
+#detailsAndForm {
+  width: 49%;
+  
+  display: inline-block;
+  margin-left: 10%;
+  }
+
+input,textarea {
+  width: 100%;
+  border-radius: 3px;
+  border: none;
+  font-family: 'Rajdhani', sans-serif;
 }
-.textcenter {
-  text-align: center;
-}
-.section1 {
-  text-align: center;
-  display: table;
+
+#contact-form {
+  position: relative;
   width: 100%;
 }
-.section1 .shtext {
-  display: block;
-  margin-top: 20px;
-}
-.section1 .seperator {
-  border-bottom:1px solid #a2a2a2;
-  width: 35px;
-  display: inline-block;
-  margin: 20px;
+
+.button {
+ position: ;
+ width: 50%;
+ display: block;
+ margin: 0 auto;
+ /*top: 5px;*/
+ margin-top: 5px;
+
 }
 
-.section1 h1 {
-  font-size: 40px;
-  color: #A44DD8;
-  font-weight: normal;
+#button {
+  background-color: #2B3F57;
+   padding: 4px;
+ font-size: 24px;
+ color: white;
+ font-weight: bold;
 }
 
-.section2 {
-    width: 1200px;
-    margin: 25px auto;
-}
-.section2 .col2 {
-  width: 48.71%;
-}
-.section2 .col2.first {
-  float: left;
-}
-.section2 .col2.last {
-  float: right;
-}
-.section2 .col2.column2 {
-  padding: 0 30px;
-}
-.section2 span.collig {
-  color: #a2a2a2;
-  margin-right: 10px;
-  display: inline-block;
-}
-.section2 .sec2addr {
-  display: block;
-  line-height: 26px;
-}
-.section2 .sec2addr p:first-child {
-  margin-bottom: 10px;
-}
-.section2 .sec2contactform input[type="text"], 
-.section2 .sec2contactform input[type="email"],
-.section2 .sec2contactform textarea {
-    padding: 18px;
-    border: 0;
-    background: #EDEDED;
-    margin: 7px 0;
-}
-.section2 .sec2contactform textarea {
-  width: 100%;
-  display: block;
-  color: #666;
-  resize:none;
-}
-.section2 .sec2contactform input[type="submit"] {
-  padding: 15px 40px;
-    color: #fff;
-    border: 0;
-    background: #A44DD8;
-    font-size: 16px;
-    text-transform: uppercase;
-    margin: 7px 0;
-    cursor: pointer;
-}
-.section2 .sec2contactform h3 {
-  font-weight: normal;
-    margin: 20px 0;
-    margin-top: 30px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 19px;
-    color: #A44DD8;
+#button:hover {
+  background-color: white;
+  color: #2B3F57;
 }
 
-/*----------------MEDIA QUERIES----------*/
 
+h2 {
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+}
 
-@media only screen and (max-width: 1266px) {
-  .section2 {
-    width: 100%;
-  }
+.socialLinks {
+  font-family: 'Rajdhani', sans-serif;
 }
-@media only screen and (max-width: 960px) {
-  .container {
-    padding: 0 30px 70px;
-  }
-  .section2 .col2 {
-    width: 100%;
-    display: block;
-  }
-  .section2 .col2.first {
-    margin-bottom: 10px;
-  }
-  .section2 .col2.column2 {
-    padding: 0;
-  }
-  body .sec2map {
-    height: 250px !important;
-  }
+
+p {
+  font-family: 'Poppins', sans-serif;
+  text-align: right;
 }
-@media only screen and (max-width: 768px) {
-  .section2 .sec2addr {
-    font-size: 14px;
-  }
-  .section2 .sec2contactform h3 {
-    font-size: 16px;
-  }
-  .section2 .sec2contactform input[type="text"], .section2 .sec2contactform input[type="email"], .section2 .sec2contactform textarea {
-    padding: 10px;
-    margin:3px 0;
-  }
-  .section2 .sec2contactform input[type="submit"] {
-    padding: 10px 30px;
-    font-size: 14px;
-  }
+
+.contactDetails {
+ float: right;
 }
-@media only screen and (max-width: 420px) {
-  .section1 h1 {
-    font-size: 28px;
-  } 
-}
+
+/*--------------------------------------------MAP------------------------------------------*/
+
 
 
 
@@ -425,7 +381,7 @@ input:focus, textarea:focus, keygen:focus, select:focus {
 
 
 .myProfile {
-    background-color: #140328;
+    background-color: #7B686E;
 
 }
 
