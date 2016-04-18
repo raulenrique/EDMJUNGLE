@@ -37,6 +37,7 @@ html, body {
   height: 100%;
   width: 100%;
   position: relative;
+  font-family: sans-serif;
 /*  overflow-x: hidden;
   overflow-y: auto;*/
 
@@ -61,6 +62,12 @@ h1 {
 section {
     overflow: hidden;
     position: relative;
+}
+
+a {
+  color: aquamarine;
+  font-weight: bolder;
+  text-decoration: none;
 }
 
 /*--------------------------------------------SIDE NAVIGATION BAR-----------------------------------------*/
@@ -177,7 +184,7 @@ header {
 /*--------------------------------------------HOME SECTION------------------------------------------------*/
 .home {
       position: relative;
-      background-image: url('../images/homepage.jpg');
+      background-image: url('../images/backgrounds/homepage.jpg');
       height: 90%;
   -webkit-background-size: cover;
      -moz-background-size: cover;
@@ -186,7 +193,7 @@ header {
       }
 
 
-/*----------------WRAPPER DIV FOR IMAGE ADND BUTTON ALIGNMENT------------*/
+/*----------------WRAPPER DIV FOR IMAGE AND BUTTON ALIGNMENT------------*/
 
 .wrapper1 {
     top: 25%;
@@ -194,7 +201,25 @@ header {
 
 }
 
-/*----------------LOGO DIV------------*/
+.successSectionContainer {
+  position: relative;
+  top: 10%;
+}
+
+#successMessage {
+  width: 100%;
+  position: relative;
+  text-align: center;
+  
+}
+
+.success-logo {
+  width: 60%;
+
+}
+
+/*--
+--------------LOGO DIV------------*/
 #brand {
   position: relative;
   width: 100%;
@@ -210,11 +235,17 @@ header {
 
 /*----------------BUTTONS DIV----------*/
 
-#homeButtons {
+#homeButtons, #homeAndPlayerButtons, #goHomeButton {
   position: absolute;
   width: 100%;
   text-align: center;
   display: inline-block;
+
+}
+
+#goHomeButton {
+  padding-top: 15%;
+  
 }
 
 
@@ -230,9 +261,15 @@ header {
     text-decoration: none;
 }
 
+.button1:hover, .button2:hover {
+  background-color: #5BC6FF;
+  color: white;
+  font-size: 20px;
+}
 
 
-/*--------------------------------------------NEW TRACKS SECTION------------------------------------------*/
+
+/*--------------------------------------------MUSIC SECTION------------------------------------------*/
 
 .music {
   background-color:#B8B2BA; 
@@ -241,26 +278,357 @@ header {
 
 
 
-/*--------------------------------------------BROWSE SECTION------------------------------------------*/
+/*--------------------------------------------CHARTS SECTION------------------------------------------*/
 
 
 .charts {
-/*    background-image: url('../images/section3.jpg');
-        -webkit-background-size: cover;
-     -moz-background-size: cover;
-       -o-background-size: cover;
-          background-size: cover;*/
+
           background-color: #982262;
 }
 
 
+.main-content {
+  width: 100%;
+  height:100%;
+  vertical-align: middle;
+  background-color: white;
+  border-color: black;
+  border: 4px solid;
+}
 
-/*--------------------------------------------ABOUT SECTION------------------------------------------*/
+.block-container {
+  
+   margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+
+}
+
+.musicFilters {
+  margin: 0;
+  padding: 15px;
+ /* padding-bottom: 15px;
+  padding-top: 15px;*/
+  border-bottom: 3px solid;
+  border-color: black;
+
+}
+
+.playAll {
+
+  float: left;
+  font-size: 18px;
+  font-weight: bold;
+  color:black;
+  
+}
+
+.title {
+  padding-right: 10px;
+  border-right: 2px solid;
+  font-size: 16px;
+}
+
+.chart-play {
+
+  font-size: 12px;
+  font-weight: bolder;
+  line-height: 0;
+  position: relative;
+  top: -2px;
+  padding-left: 10px;
+  cursor: pointer;
+}
+
+.chart-play:hover {
+  background-color: #B81739;
+  color: white;
+  padding: 5px;
+}
+
+.chartsSort {
+  float: right;
+  font-size: 18px;
+  font-weight: bold;
+  color:black;
+}
+
+.music-sort-charts {
+
+  display: inline-block;
+  vertical-align: top;
+  font-weight: bold;
+}
+
+.hottestTracks, .date {
+  height: 25px;
+  border:none;
+  color: #ffffff;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-size: 10px;
+  font-weight: bold;
+  font-width: 100%;
+  text-transform: uppercase;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+  -moz-user-select: none;
+  cursor: pointer;
+  
+}
+
+.date {background-color: #140328;}
+
+.hottestTracks {background-color: #982262;}
+
+.hottestTracks:hover {
+    background-color: #FC7093;
+  color: white;
+  overflow: hidden;
+  font-size: 15px;
+}
+
+  .date:hover {  
+  background-color: #608BFF;
+  color: white;
+  overflow: hidden;
+  font-size: 15px; 
+}
+
+ul {
+  list-style: none;
+}
+
+.chartsListView {
+  margin: 0px;
+  padding-top: 1.5%;
+  padding-left: 15%;
+}
+
+.chartsListEach {
+  vertical-align: top;
+  margin-bottom: 15px;
+  border: 1px solid rgba(0,0,0,0.1);
+  margin-right: 1%;
+  margin-left: 1%;
+  padding-right: 0px;
+  display: inline-block;
+  padding: 0 7.5px;
+  max-width: 300px;
+  min-width: 300px;
+}
+
+
+.chartsListTable{
+  position: relative;
+}
+
+.listView {
+  display: table;
+  width: 100%;
+}
+
+.listViewCol {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0 0;
+}
+
+.listView .ColumnListNumber
+{
+  vertical-align: middle;
+  width: 50px;
+  font-size: 25px;
+}
+
+.listView .ColumnListImage {
+  width: 100px;
+}
 
 
 
-.playlists {
+.ColumnListImage {
+width: 100%;
+position: relative;
+display: tabe
+}
+
+.play-track-overlay {
+
+opacity: 0;
+position: absolute;
+width: 100px;
+height: 100px;
+top: 0;
+background-color: rgba(0,0,0,0.7);
+transition: opacity,1s,ease-in-out;
+cursor: pointer;
+margin-top: 0px;
+vertical-align: baseline;
+
+}
+
+
+.listView img {
+  display: block;
+  position: relative;
+  width: 100px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.ColumnListDetails {
+  vertical-align: top;
+border-bottom: none;
+
+}
+
+
+.chartsTitle {
+  border-bottom: 1px solid;
+border-color: #e0e4e7;
+}
+
+.chartsTitleEach {
+  padding:5px 40px 5px 15px;
+  font-size: 110%;
+
+}
+
+.trackTitleList {
+max-height: 20px;
+overflow: hidden;
+min-height: 20px;
+/*font-size: 12px;*/
+display: inline-table;
+
+}
+
+.brandColour  {
+ 
+  overflow: hidden;
+  font-size: 12px;
+}
+
+.iconChartsDropdown {
+  line-height: 1;
+  text-transform: none;
+  font-weight: normal;
+}
+
+.iconChartsMenu {
+  list-style: none;
+}
+
+
+.chartsSocial {
+padding: 10px 5px 5px 15px;}
+
+
+.container {
+  width: 100%;
+}
+.musicGenre {
+  width: 50%;
+  float: left;
+}
+.statsCounter {
+  padding-left:5px;
+  width:50%;
+  float: right;
+}
+
+
+
+
+/*--------------------------------------------NEWS SECTION------------------------------------------*/
+
+
+
+.news {
     background-color: #140328;
+}
+
+.column {
+  width: 33.33%;
+  float: left;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 4% ;
+}
+
+.blogBox {
+  font-size: 1em;
+  font-weight: 300;
+  font-family: 'Rajdhani', sans-serif; 
+
+}
+
+img {
+
+  vertical-align: middle;
+  border: 0;
+  height: auto;
+  max-width: 100%;
+
+}
+
+
+.blogBoxContent {
+  padding: 3.5em 3em;
+  background-color: white;
+}
+
+.blogBoxContent , .admin-list {
+  padding-bottom: 1em;
+}
+
+.admin-list ul li, .blogBoxContent {
+  float: left;
+  text-decoration: none;
+  line-height: 2.8em;
+  text-transform: uppercase;
+  font-weight: 400;
+  vertical-align: middle;
+  text-align: center; 
+}
+
+
+.rmButton {
+  background-color: #982262;
+  display: inline-block;
+  margin-top: 2em;
+}
+
+.rmButton a {
+  font-size: 1.1em;
+  font-weight: 600;
+  line-height: 2.8em;
+  padding: 0.6em 1.4em;
+  text-decoration: none;
+}
+
+
+
+.newsText {
+  text-align: justify;
+}
+
+
+.imageBox img, .videoBox {
+  height: 300px;
+  width: 100%;
+}
+
+iframe {
+  height: 300px;
+  width: 100%;
 }
 
 
@@ -337,15 +705,18 @@ input,textarea {
 
 }
 
-#button {
+#send-button {
   background-color: #2B3F57;
    padding: 4px;
+   border: none;
+   border-radius: 5px;
  font-size: 24px;
  color: white;
+  font-family: 'Rajdhani', sans-serif;
  font-weight: bold;
 }
 
-#button:hover {
+#send-button:hover {
   background-color: white;
   color: #2B3F57;
 }
@@ -369,20 +740,640 @@ p {
  float: right;
 }
 
-/*--------------------------------------------MAP------------------------------------------*/
+
+/*-----------------------Success Page-------------------------*/
+
+   .success { 
+
+    background-image: url('../images/backgrounds/success.jpg');
+        -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
+          height: 100%;
+
+        }
+
+/*-----------------------Player Page-------------------------*/
+
+   .player { 
+
+    background-image: url('../images/backgrounds/player.jpg');
+        -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
+          height: 100%;
+
+        }
 
 
 
+/* Small Screen Phones ----------- */
+
+@media only screen and (min-device-width : 250px) and (max-device-width : 449px) 
+{
+/* Styles */
+.chartsListEach {
+  display: block;
+  max-width: 100%;
+  min-width: 100%;
+  padding: 0px;
+}
+.chartsListView {
+  display: block;
+  padding: 0px;
+}
 
 
+.chartsSort {
+  float:none;
+  text-align: center;
+
+}
+.playAll {
+width: 100%;
+}
+
+.chart-play {
+  font-size: 16px;
+}
+
+.music-sort-charts {
+  padding-top: 10px;
+}
+
+.hottestTracks, .date {
+  font-size: 12px;
+}
+
+.hottestTracks:hover, .date:hover {
+  font-size: 12px;
+}
+
+.block-layout {
+  width: 100%;
+}
+
+.musicGenre {
+  float:none;
+  display: block;
+}
+
+.statsCounter {
+  float: none;
+}
+
+.chartsTitleEach {
+  padding: 0px;
+}
 
 
-/*--------------------------------------------MY PROFILE------------------------------------------*/
+.listViewCol {
+  padding: 2px;
+}
 
 
-.myProfile {
-    background-color: #7B686E;
+h1 {
+  font-size: 1.5em;
+}
+
+.brand-logo {
+  width: 100%;
+}
+
+#brand {
+  left: 0px;
+}
+
+.home {
+  height: 100%;
+}
+
+.button2 {
+ 
+  
+  margin: 20px 0px 10px 0px;
 
 }
 
+.button1 {
+  margin-top: 50px;
+  
+}
+
+.button1, .button2 {
+  display: block;
+  width: 100%;
+  font-size: 24px;
+  border-radius: 7px;
+  padding: 13px 0px 13px 0px;
+}
+ .button1:hover, .button2:hover {
+font-size: 24px;
+
+ } 
+
+
+.successSectionContainer {
+ width: 100%;
+ height: 100%;
+ top: 20%;
+}
+
+#successMessage {
+  width: 100%;
+  position: relative;
+  text-align: center;
+  
+}
+
+.success-logo {
+  width: 100%;
+
+}
+
+.button {
+  padding: 13px 0px 13px 0px;
+}
+
+#map {
+  width: 100%;
+}
+
+.contactDetails {
+  float: none;
+}
+
+#detailsAndForm {
+  width: 100%;
+  margin-left: 0px;
+}
+
+.socialLinks {
+  display: -webkit-box;
+  font-size: 20px;
+}
+
+p {
+  text-align: -webkit-center;
+}
+
+
+
+.column {
+  float: left;
+  width: 100%;  
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.imageBox img, .videoBox {
+height: 250px;
+width: 100%;
+
+}
+
+iframe {
+  height: 250px;
+  width: 100%;
+}
+
+.blogBoxContent {
+  padding: 2em;
+}
+
+.admin-list ul {
+  text-align: center;
+  display: inline-flex;
+  padding-left: 0px;
+}
+
+.newsText {
+  font-size: 14px;
+}
+
+
+
+
+
+}
+
+
+
+/* Big Smartphones ----------- */
+@media only screen and (min-device-width : 450px) and (max-device-width : 749px) 
+{
+/* Styles */
+
+.brand-logo {
+  width: 100%;
+}
+
+#brand {
+  left: 0px;
+}
+
+.home {
+  height: 100%;
+}
+
+.button2 {
+ 
+  
+  margin: 20px 0px 10px 0px;
+
+}
+
+.button1 {
+  margin-top: 50px;
+  
+}
+
+.button1, .button2 {
+  display: block;
+  width: 100%;
+  font-size: 24px;
+  border-radius: 7px;
+  padding: 20px 0px 20px 0px;
+}
+ .button1:hover, .button2:hover {
+font-size: 24px;
+ } 
+
+h1 {
+  font-size: 1.65em;
+}
+
+.chartsListEach {
+  display: block;
+  max-width: 100%;
+  min-width: 100%;
+}
+.chartsListView {
+  display: block;
+  padding-right: 2%;
+  padding-left: 1%;
+}
+
+.chartsSort {
+  float:none;
+  text-align: center;
+
+}
+
+.music-sort-charts {
+  padding-top: 10px;
+}
+
+.playAll {
+width: 100%;
+}
+
+.chart-play {
+  font-size: 16px;
+}
+
+
+.hottestTracks, .date {
+  font-size: 16px;
+}
+
+.hottestTracks:hover, .date:hover {
+  font-size: 16px;
+}
+
+.block-layout {
+  width: 100%;
+}
+
+.column {
+  float: left;
+  width: 100%;
+  padding-left: 0px;
+  padding-right: 0px;  
+}
+
+.imageBox img, .videoBox {
+height: 250px;
+width: 100%;
+
+}
+
+iframe {
+  height: 250px;
+  width: 100%;
+}
+
+.blogBoxContent {
+  padding: 2em;
+}
+
+.admin-list ul {
+  text-align: center;
+  display: inline-flex;
+  padding-left: 0px;
+}
+
+.rmButton a {
+  font-size: 1em;
+}
+
+
+#map {
+  width: 100%;
+}
+
+.contactDetails {
+  float: none;
+}
+
+#detailsAndForm {
+  width: 100%;
+  margin-left: 0px;
+}
+
+.socialLinks {
+  display: -webkit-box;
+  font-size: 20px;
+}
+
+p {
+  text-align: -webkit-center;
+  font-size: 16px;
+}
+
+input {
+  height: 30px;
+}
+
+input, textarea {
+font-size: large;
+}
+
+#send-button {
+  font-size: 30px;
+
+}
+
+
+
+
+
+}
+
+
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 750px) and (max-device-width : 1023px) 
+{
+/* Styles */
+
+
+.brand-logo {
+  width: 100%;
+}
+
+#brand {
+  left: 0px;
+}
+
+.home {
+  height: 100%;
+}
+
+.button2 {
+ 
+  
+  margin: 20px 0px 10px 0px;
+
+}
+
+.button1 {
+  margin-top: 0px;
+  
+}
+
+.button1, .button2 {
+  display: block;
+  width: 100%;
+  font-size: 45px;
+  border-radius: 7px;
+  padding: 20px 0px 20px 0px;
+}
+ .button1:hover, .button2:hover {
+
+font-size: 24px;
+
+ } 
+
+.chartsListView {
+  padding-left: 2%;
+}
+
+#map {
+  width: 100%;
+}
+
+.contactDetails {
+  float: none;
+}
+
+#detailsAndForm {
+  width: 100%;
+  margin-left: 0px;
+}
+
+.socialLinks {
+  display: -webkit-box;
+  font-size: 20px;
+}
+
+p {
+  text-align: -webkit-center;
+  font-size: 24px;
+}
+
+
+.column {
+  float: left;
+  width: 100%;  
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.imageBox img, .videoBox {
+height: 400px;
+width: 100%;
+
+}
+
+iframe {
+  height: 400px;
+  width: 100%;
+}
+
+.blogBoxContent {
+  padding: 2em;
+}
+
+input {
+  height: 50px;
+}
+
+input, textarea {
+font-size: x-large;
+}
+
+#send-button {
+  font-size: 35px;
+
+}
+
+.date , .hottestTracks, .music-sort-charts {
+  width: 150px;
+  font-size: 15px;
+}
+
+
+
+.admin-list ul {
+  text-align: center;
+  display: inline-flex;
+  padding-left: 0px;
+
+}
+
+.chart-play {
+  font-size: 16px;
+  top: 0px;
+}
+
+
+
+}
+
+
+
+/* Larger desktops and laptops----------- */
+@media only screen and (min-width: 1025px) 
+{
+
+
+.imageBox img, .videoBox {
+  height: 250px;
+  width: 100%;
+}
+
+
+iframe {
+  height: 250px;
+}
+
+
+.blogParagraph {
+  height: auto;
+}
+
+/*.blogBoxContent {
+  height: 800px;
+
+}*/
+
+.newsText {
+  text-align: left;
+}
+
+.chartsListView {
+  padding-left: 15%;
+
+}
+
+.hottestTracks , .date {
+  font-size: 20px;
+  height: 35px;
+
+}
+
+.chart-play {
+font-size: 30px;
+top: 5px;
+}
+
+#homeAndPlayerButtons {
+
+
+font-size:  30px;
+
+}
+
+.success-logo {
+  width: 90%;
+
+}
+
+
+
+}
+
+
+
+/*Larger desktops and laptops*/
+@media only screen and (min-width: 450px) 
+{
+
+.button1 {
+  margin-top: 0px;
+}
+
+.successSectionContainer {
+  position: relative;
+  top: 15%;
+  height: 100%;
+}
+
+#successMessage {
+  width: 100%;
+  position: relative;
+  text-align: center;
+  
+}
+
+.success-logo {
+  width: 100%;
+
+}
+
+}
+
+/*Larger desktops and laptops*/
+@media only screen and (min-width: 725px) 
+{
+
+.button1 {
+  margin-top: 0px;
+}
+
+.successSectionContainer {
+  position: relative;
+  top: 8%;
+  height: 100%;
+}
+
+#successMessage {
+  width: 100%;
+  position: relative;
+  text-align: center;
+  
+}
+
+.success-logo {
+  width: 100%;
+
+
+  
+
+}
+
+}
 

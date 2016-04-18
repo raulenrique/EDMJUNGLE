@@ -148,106 +148,154 @@ jQuery(function($) {
 /*---------------------CONTACT FORM VALIDATION--------------------------------*/
 
 
-    function addFormValidation(theForm) {
 
-       if (theForm === null || theForm.tagName.toUpperCase() !== 'FORM') {
-           throw new Error("first parameter to addFormValidation must be a FORM, but got " + theForm.tagName);
-       }
-       theForm.noValidate = true;
+function addFormValidation(formElement) {
 
-       theForm.addEventListener('submit', function(evt) {
-           if(validateForm(theForm) === false){
-               evt.preventDefault();
-           }
-       });
+  if (formElement === null || formElement.tagName.toUpperCase() !== 'FORM') {
+    throw new Error("first parameter to addFormValidation must be a FORM, but got " + formElement.tagName);
+  }
 
-       function validateForm(theForm){
-           var isError = false;
-           var elements = theForm.elements;
-            for (var i = 0; i < elements.length; i += 1) {
-               var isValid = isFieldValid(elements[i]);
-                if(isValid === false){
-                       isError = true;
-                   }      
-            }
-            return ! isError;
-       }
+  formElement.noValidate = true;
 
-       function isFieldValid(field) {
-           var errorMsg = "";
+  formElement.addEventListener("submit", function (evt) {
+    if (!validateForm(formElement)) {
+      evt.preventDefault();
+    }
+  });
 
-           if (! needsToBeValidated(field)) {
-               return true;
-           }
+  for (var i = 0; i < formElement.elements.length; i += 1) {
+    var field = formElement.elements[i];
+    field.addEventListener('blur', blurEvent);
+  }
 
-           if (field.id.length === 0 || field.name.length === 0) {
-           console.error("error: ", field);
-           throw new Error("found a field that is missing an id and/or name attribute. name should be there. id is required for determining the field's error message element.");
-           }
-           var errorSpan = document.querySelector('#' + field.id + '-error');
-           
-           if (errorSpan === null) {
-               console.error("error: ", field);
-               throw new Error("could not find the '#" + field.id + "-error' element. It's needed for error messages if #" + field.id + " is ever invalid.");
-           }
-           
-           field.classList.remove('invalid');
-           errorSpan.classList.remove('danger');
-           errorSpan.innerHTML = "";
+  /* FUNCTIONS */
 
-           // number check
+  function blurEvent(evt) {
+    validateField(evt.target);
+  }
 
-           if(field.type === "number" & field.min > 0 && parseInt(field.value, 10) < parseInt(field.min, 10) ){
-            errorMsg = "must be" + field.min + "or greater.";
-          }
+  function validateForm(formElement) {
+    var error = false;
 
-          if(field.type === "number" & field.max > 0 && parseInt(field.value, 10) < parseInt(field.max, 10)){
-            errorMsg = "must be" + field.max + "or less.";
-          }
-
-        
-          // email check ------------------------------------------------------------------------------------
-
-          if(field.type ==="email" && ! isEmail(field.value)){
-           errorMsg= "****";
-          }
-          
-           // Min and Max length check----------------------------------------------------------------------
-           
-           if(field.minLength > 0 && field.value.length < field.minLength){
-               errorMsg = "Must be " + field.minLength + " or more characters long.";
-           }
-
-           if(field.maxLength > 0 && field.value.length > field.maxLength){
-               errorMsg = "Must be " + field.maxLength + " characters or less.";
-
-           }
-          
-           // If this field is required---------------------------------------------------------------------
-
-          if(field.type === "checkbox" && ! field.checked) { 
-               errorMsg = "This must be checked.";
-           } else if(field.required && field.value.trim() === "") {
-                     errorMsg = "****"; 
-          }
-
-           if(errorMsg !== ""){  
-               errorSpan.innerHTML = errorMsg;    
-               field.classList.add('invalid');
-               errorSpan.classList.add('danger');
-
-               return false; //we found the error and so it is invalid
-           }
-
-           return true;
-       }
-
-       function needsToBeValidated(field){
-           return ['submit', 'reset', 'button', 'hidden', 'fieldset'].indexOf(field.type) === -1;
-       }
-       function isEmail(input) {
-           return input.match(/^([a-z0-9_.\-+]+)@([\da-z.\-]+)\.([a-z\.]{2,})$/);
-       }
-
+    for (var i = 0; i < formElement.elements.length; i += 1) {
+      var isValid = validateField(formElement.elements[i]);
+      if ( ! isValid) { 
+        error = true;
+      }
     }
 
+    return !error;
+  }
+
+
+  function validateField(el) {
+    var error = "";
+
+    if (['submit', 'reset', 'button', 'hidden', 'fieldset'].indexOf(el.type) > -1) {
+      return true; // buttons and fieldsets are automatically valid.
+    }
+
+    if (el.id.length === 0 || el.name.length === 0) {
+      console.error("error: ", el);
+      throw new Error("found a form element that is missing an id and/or name attribute. name should be there. id is required for determining the field's error message element.");
+    }
+
+    // find this element's match error div.
+    var errorDiv = document.querySelector("#" + el.id + "-error");
+    if (errorDiv === null) {
+      console.error("error: ", el);
+      throw new Error("could not find the '#" + el.id + "-error' element. It's needed for error messages if #" + el.id + " is ever invalid.");
+    }
+
+    errorDiv.innerHTML = "";
+
+    el.classList.remove('invalid');
+    errorDiv.classList.remove('danger');
+
+    if (el.type === "email" && el.value.length >= 1 && !isEmail(el.value)) {
+      error = "please provide a valid email address.";
+    }
+
+    if (hasMinLength(el) && el.value.length < el.minLength) {
+      error = "must be " + el.minLength + " or more characters long.";
+    }
+
+    if (hasMaxLength(el) && el.value.length > el.maxLength) {
+      error = "must be " + el.maxLength + " or less characters long.";
+    }
+
+    if (hasMin(el) && parseInt(el.value, 10) < parseInt(el.min, 10)) {
+      error = "must be " + el.min + " or greater.";
+    }
+
+    if (hasMax(el) && parseInt(el.value, 10) > parseInt(el.max, 10)) {
+      error = "must be " + el.max + " or less.";
+    }
+
+    if (el.dataset.fvMatch) { // data-fv-match="..."
+      var matchingEl = document.querySelector('#' + el.dataset.fvMatch);
+      if (matchingEl === null) {
+        console.error("error: ", el);
+        throw new Error("Couldn't find the field '#" + el.dataset.fvMatch + "' to check #" + el.id + " against.");
+      }
+      if (el.value !== matchingEl.value) {
+        error = "The two fields must match.";
+      }
+    }
+
+    // is this field required?
+    if (el.type === "checkbox" && el.required && !el.checked) { 
+      error = "this must be checked.";
+    } else if (isRequired(el) && el.value.trim().length === 0) {
+      error = "this field is required.";
+    }
+
+    if (error !== "") {
+      errorDiv.innerHTML = error;
+      
+      el.classList.add('invalid');
+      errorDiv.classList.add('danger');
+
+      return false; // it's invalid
+    }
+
+    return true;
+  }
+
+  function isEmail(input) {
+    return input.match(/^([a-z0-9_.\-+]+)@([\da-z.\-]+)\.([a-z\.]{2,})$/);
+  }
+
+  function hasMinLength(el) {
+    return (minMaxLengthApplies(el) && el.minLength > 0);
+  }
+
+  function hasMaxLength(el) {
+    return (minMaxLengthApplies(el) && el.maxLength > -1);
+  }
+
+  function hasMin(el) {
+    return (numericMinMaxApplies(el) && el.min > 0);
+  }
+
+  function hasMax(el) {
+    return (numericMinMaxApplies(el) && el.max > -1);
+  }
+
+  function isRequired(el) {
+    return (requiredApplies(el) && el.required);
+  }
+
+  function minMaxLengthApplies(el) {
+    return ['text', 'search', 'url', 'tel', 'email', 'password', 'textarea'].indexOf(el.type) > -1;
+  }
+
+  function numericMinMaxApplies(el) {
+    return ['number', 'range'].indexOf(el.type) > -1;
+  }
+
+  function requiredApplies(el) {
+    return ['text', 'search', 'url', 'tel', 'email', 'password', 'datetime', 'date', 'month', 'week', 'time', 'number', 'file', 'textarea', 'select-one'].indexOf(el.type) > -1;
+  }
+
+}

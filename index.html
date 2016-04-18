@@ -4,7 +4,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta charset="UTF-8">
     <title>EDM JUNGLE</title>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400;300|Poppins:500|Rajdhani' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400;300%7CPoppins:500%7CRajdhani' rel='stylesheet' type='text/css'>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
@@ -16,65 +16,1123 @@
 <body>
     
 <div id="main">
-<!------------------------------ SIDEBAR NAV ---------------------------------------------------->
+<!-- SIDEBAR NAV -->
 
         <div id="sidebar">
             <nav>
             <div class="icon-close"><i class="fa fa-times"></i></div>
                 <ul>
-                    <li><a href="#section home">Home</a></li>
-                    <li><a href="#section music">Music</a></li>
-                    <li><a href="#section charts">Charts</a></li>
-                    <li><a href="#section playlists">Playlists</a></li>
-                    <li><a href="#section contact">Contact Us</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#music">Music</a></li>
+                    <li><a href="#charts">Charts</a></li>
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="player.html">Music Player</a></li>
                     <li><div class="socialmediaicons"><a href="#"><i class="fa fa-facebook-square fa-2x"></i></a><a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a><a href="#"><i class="fa fa-twitch fa-2x"></i></a></div></li>
                 </ul>
             </nav>
         </div><!-- /sidebar -->
     <div id="content">
 
-    <!---------------------------------- HOME -------------------------------------------->
+    <!-- HOME -->
 
-<section id="section home" class="section home">
+<section id="home" class="section home">
     <div class="icon-menu">
         <i class="fa fa-bars"></i>
     </div>
     <div class="wrapper1">
         <div id="brand">
-            <img class="brand-logo" src="images/brandlogobig.png">
+            <img class="brand-logo" src="images/brandlogobig.png" alt="brandlogo">
         </div>
         <br>
         <br>
         <div id="homeButtons">
-            <a class="button1" href="#section newTracks"><i class="fa fa-headphones" aria-hidden="true"></i>New Tracks</a>
-            <a class="button2" href="#section browse"><i class="fa fa-play" aria-hidden="true"></i>Listen Now</a>
+            <a class="button1" href="#music"><i class="fa fa-headphones" aria-hidden="true"></i> Latest</a>
+            <a class="button2" href="#charts"><i class="fa fa-volume-off" aria-hidden="true"></i> Trending</a>
         </div>
     </div>
 </section>
 
-    <!---------------------------------- MUSIC -------------------------------------------->
+    <!-- MUSIC -->
 
 
-        <section id="section music" class="section music">
-            <br><br><header><h1>MUSIC</h1></header>
+<section id="music" class="section music">
+    <br><br><header><h1>MUSIC</h1></header>
+
+      <div class="wrapper">
+            <div class="main-content">
+                <div class="block-container">
+                    <div class="musicFilters clearfix">
+                        <div class="playAll">
+                            <strong class="title">CHARTS</strong> <span class=
+                            "chart-play"><i aria-hidden="true" class=
+                            "fa fa-play"></i> PLAY ALL</span>
+                        </div>
+                        <div class="chartsSort">
+                            <div class="music-sort-charts">
+                                <select class="hottestTracks">
+                                    <option value="0" selected="select">
+                                        Genre
+                                    </option>
+                                    <option value="1">
+                                        Tropical
+                                    </option>
+                                    <option value="2">
+                                        DnB
+                                    </option>
+                                    <option value="3">
+                                        Deep House
+                                    </option>
+                                    <option value="4">
+                                        Electro
+                                    </option>
+                                    <option value="5">
+                                        House
+                                    </option>
+                                    <option value="6">
+                                        Trance
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="music-sort-charts">
+                                <select class="date">
+                                    <option selected="selected" value="0">
+                                        Today
+                                    </option>
+                                    <option value="1">
+                                        This Week
+                                    </option>
+                                    <option value="2">
+                                        This Month
+                                    </option>
+                                    <option value="3">
+                                        This Year
+                                    </option>
+                                    <option value="4">
+                                        Last Year
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="block-container">
+                    <div class="block-layout">
+                        <ul class="chartsListView">
+                            
+                                <li class="chartsListEach">
+                                    <div class="listView chartsListTable">
+
+                                        <div class="ColumnListNumber listViewCol">
+                                            1
+                                        </div>
+
+                                        <div class="ColumnListImage listViewCol">
+                                        <div class="play-track-overlay">
+                                            <i aria-hidden="true" class=
+                                            "fa fa-play"></i>
+                                        </div><img src=
+                                        "images/songs/edx-missing.jpg" alt="song cover art">
+                                        </div>
+
+                                        <div class="ColumnListDetails listViewCol">
+                                            <div class="chartsTitle">
+                                                <div class="chartsTitleEach">
+                                                    <div class="trackTitleList">
+                                                        <a href="">Missing</a>
+                                                    </div>
+                                                    <div class="brandColour">
+                                                        <a href="">EDX</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="chartsSocial">
+                                                <div class="container">
+                                                    <span class=
+                                                    "musicGenre">House</span>
+                                                    <div class="statsCounter">
+                                                    <span><i aria-hidden="true"
+                                                    class="fa fa-headphones"></i></span>
+                                                    <span class="stats">15,000</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                <li class="chartsListEach">
+                                    <div class="listView chartsListTable">
+
+                                        <div class="ColumnListNumber listViewCol">
+                                            2
+                                        </div>
+
+                                        <div class="ColumnListImage listViewCol">
+                                        <div class="play-track-overlay">
+                                            <i aria-hidden="true" class=
+                                            "fa fa-play"></i>
+                                        </div><img src=
+                                        "images/songs/ah-hollywood.jpg" alt="song cover art">
+                                        </div>
+
+                                        <div class="ColumnListDetails listViewCol">
+                                            <div class="chartsTitle">
+                                                <div class="chartsTitleEach">
+                                                    <div class="trackTitleList">
+                                                        <a href="">Hollywood</a>
+                                                    </div>
+                                                    <div class="brandColour">
+                                                        <a href="">Afrojack & Hardwell</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="chartsSocial">
+                                                <div class="container">
+                                                    <span class=
+                                                    "musicGenre">Electro</span>
+                                                    <div class="statsCounter">
+                                                    <span><i aria-hidden="true"
+                                                    class="fa fa-headphones"></i></span>
+                                                    <span class="stats">23,000</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                <li class="chartsListEach">
+                                    <div class="listView chartsListTable">
+
+                                        <div class="ColumnListNumber listViewCol">
+                                            3
+                                        </div>
+
+                                        <div class="ColumnListImage listViewCol">
+                                        <div class="play-track-overlay">
+                                            <i aria-hidden="true" class=
+                                            "fa fa-play"></i>
+                                        </div><img src=
+                                        "images/songs/disclosure-caracal.jpg" alt="song cover art">
+                                        </div>
+
+                                        <div class="ColumnListDetails listViewCol">
+                                            <div class="chartsTitle">
+                                                <div class="chartsTitleEach">
+                                                    <div class="trackTitleList">
+                                                        <a href="">Caracal</a>
+                                                    </div>
+                                                    <div class="brandColour">
+                                                        <a href="">Disclosure</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="chartsSocial">
+                                                <div class="container">
+                                                    <span class=
+                                                    "musicGenre">DnB</span>
+                                                    <div class="statsCounter">
+                                                    <span><i aria-hidden="true"
+                                                    class="fa fa-headphones"></i></span>
+                                                    <span class="stats">17,000</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                <li class="chartsListEach">
+                                    <div class="listView chartsListTable">
+
+                                        <div class="ColumnListNumber listViewCol">
+                                            4
+                                        </div>
+
+                                        <div class="ColumnListImage listViewCol">
+                                        <div class="play-track-overlay">
+                                            <i aria-hidden="true" class=
+                                            "fa fa-play"></i>
+                                        </div><img src=
+                                        "images/songs/kaskade-eyes.jpg" alt="song cover art">
+                                        </div>
+
+                                        <div class="ColumnListDetails listViewCol">
+                                            <div class="chartsTitle">
+                                                <div class="chartsTitleEach">
+                                                    <div class="trackTitleList">
+                                                        <a href="">Eyes</a>
+                                                    </div>
+                                                    <div class="brandColour">
+                                                        <a href="">Kaskade</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="chartsSocial">
+                                                <div class="container">
+                                                    <span class=
+                                                    "musicGenre">Deep House</span>
+                                                    <div class="statsCounter">
+                                                    <span><i aria-hidden="true"
+                                                    class="fa fa-headphones"></i></span>
+                                                    <span class="stats">28,000</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                <li class="chartsListEach">
+                                    <div class="listView chartsListTable">
+
+                                        <div class="ColumnListNumber listViewCol">
+                                            5
+                                        </div>
+
+                                        <div class="ColumnListImage listViewCol">
+                                        <div class="play-track-overlay">
+                                            <i aria-hidden="true" class=
+                                            "fa fa-play"></i>
+                                        </div><img src=
+                                        "images/songs/autoerotique_ft._maxstyler-badman.jpg" alt="song cover art">
+                                        </div>
+
+                                        <div class="ColumnListDetails listViewCol">
+                                            <div class="chartsTitle">
+                                                <div class="chartsTitleEach">
+                                                    <div class="trackTitleList">
+                                                        <a href="">Badman</a>
+                                                    </div>
+                                                    <div class="brandColour">
+                                                        <a href="">Autoerotique ft. Max Styler</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="chartsSocial">
+                                                <div class="container">
+                                                    <span class=
+                                                    "musicGenre">Electro</span>
+                                                    <div class="statsCounter">
+                                                    <span><i aria-hidden="true"
+                                                    class="fa fa-headphones"></i></span>
+                                                    <span class="stats">8,000</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                <li class="chartsListEach">
+                                    <div class="listView chartsListTable">
+
+                                        <div class="ColumnListNumber listViewCol">
+                                            6
+                                        </div>
+
+                                        <div class="ColumnListImage listViewCol">
+                                        <div class="play-track-overlay">
+                                            <i aria-hidden="true" class=
+                                            "fa fa-play"></i>
+                                        </div><img src=
+                                        "images/songs/paulvandyk-louder.jpg" alt="song cover art">
+                                        </div>
+
+                                        <div class="ColumnListDetails listViewCol">
+                                            <div class="chartsTitle">
+                                                <div class="chartsTitleEach">
+                                                    <div class="trackTitleList">
+                                                        <a href="">Louder</a>
+                                                    </div>
+                                                    <div class="brandColour">
+                                                        <a href="">Paul Van Dyk</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="chartsSocial">
+                                                <div class="container">
+                                                    <span class=
+                                                    "musicGenre">Trance</span>
+                                                    <div class="statsCounter">
+                                                    <span><i aria-hidden="true"
+                                                    class="fa fa-headphones"></i></span>
+                                                    <span class="stats">13,000</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                <li class="chartsListEach">
+                                    <div class="listView chartsListTable">
+
+                                        <div class="ColumnListNumber listViewCol">
+                                            7
+                                        </div>
+
+                                        <div class="ColumnListImage listViewCol">
+                                        <div class="play-track-overlay">
+                                            <i aria-hidden="true" class=
+                                            "fa fa-play"></i>
+                                        </div><img src=
+                                        "images/songs/aboveandbeyond-alchemy.jpg" alt="song cover art">
+                                        </div>
+
+                                        <div class="ColumnListDetails listViewCol">
+                                            <div class="chartsTitle">
+                                                <div class="chartsTitleEach">
+                                                    <div class="trackTitleList">
+                                                        <a href="">Alchemy</a>
+                                                    </div>
+                                                    <div class="brandColour">
+                                                        <a href="">Above & Beyond</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="chartsSocial">
+                                                <div class="container">
+                                                    <span class=
+                                                    "musicGenre">Trance</span>
+                                                    <div class="statsCounter">
+                                                    <span><i aria-hidden="true"
+                                                    class="fa fa-headphones"></i></span>
+                                                    <span class="stats">35,000</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                <li class="chartsListEach">
+                                    <div class="listView chartsListTable">
+
+                                        <div class="ColumnListNumber listViewCol">
+                                            8
+                                        </div>
+
+                                        <div class="ColumnListImage listViewCol">
+                                        <div class="play-track-overlay">
+                                            <i aria-hidden="true" class=
+                                            "fa fa-play"></i>
+                                        </div><img src=
+                                        "images/songs/nora_en_pure-sweetmelody.jpg" alt="song cover art">
+                                        </div>
+
+                                        <div class="ColumnListDetails listViewCol">
+                                            <div class="chartsTitle">
+                                                <div class="chartsTitleEach">
+                                                    <div class="trackTitleList">
+                                                        <a href="">Sweet Melody</a>
+                                                    </div>
+                                                    <div class="brandColour">
+                                                        <a href="">Nora En Pure</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="chartsSocial">
+                                                <div class="container">
+                                                    <span class=
+                                                    "musicGenre">Tropical</span>
+                                                    <div class="statsCounter">
+                                                    <span><i aria-hidden="true"
+                                                    class="fa fa-headphones"></i></span>
+                                                    <span class="stats">8,000</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                <li class="chartsListEach">
+                                    <div class="listView chartsListTable">
+
+                                        <div class="ColumnListNumber listViewCol">
+                                            9
+                                        </div>
+
+                                        <div class="ColumnListImage listViewCol">
+                                        <div class="play-track-overlay">
+                                            <i aria-hidden="true" class=
+                                            "fa fa-play"></i>
+                                        </div><img src=
+                                        "images/songs/majorlazer-lean_on.png" alt="song cover art">
+                                        </div>
+
+                                        <div class="ColumnListDetails listViewCol">
+                                            <div class="chartsTitle">
+                                                <div class="chartsTitleEach">
+                                                    <div class="trackTitleList">
+                                                        <a href="">Lean On</a>
+                                                    </div>
+                                                    <div class="brandColour">
+                                                        <a href="">Major Lazer</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="chartsSocial">
+                                                <div class="container">
+                                                    <span class=
+                                                    "musicGenre">Electro</span>
+                                                    <div class="statsCounter">
+                                                    <span><i aria-hidden="true"
+                                                    class="fa fa-headphones"></i></span>
+                                                    <span class="stats">40,000</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                <li class="chartsListEach">
+                                    <div class="listView chartsListTable">
+
+                                        <div class="ColumnListNumber listViewCol">
+                                            10
+                                        </div>
+
+                                        <div class="ColumnListImage listViewCol">
+                                        <div class="play-track-overlay">
+                                            <i aria-hidden="true" class=
+                                            "fa fa-play"></i>
+                                        </div><img src=
+                                        "images/songs/seeb-breathe.jpg" alt="song cover art">
+                                        </div>
+
+                                        <div class="ColumnListDetails listViewCol">
+                                            <div class="chartsTitle">
+                                                <div class="chartsTitleEach">
+                                                    <div class="trackTitleList">
+                                                        <a href="">Breathe</a>
+                                                    </div>
+                                                    <div class="brandColour">
+                                                        <a href="">Seeb</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="chartsSocial">
+                                                <div class="container">
+                                                    <span class=
+                                                    "musicGenre">Deep House</span>
+                                                    <div class="statsCounter">
+                                                    <span><i aria-hidden="true"
+                                                    class="fa fa-headphones"></i></span>
+                                                    <span class="stats">23,000</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         </section>
 
 
-    <!---------------------------------- CHARTS -------------------------------------------->
+    <!-- CHARTS -->
 
 
 
-        <section id="section charts" class="section charts">
-           <br><br> <header><h1>CHARTS</h1></header>
-        </section>
+<section id="charts" class="section charts">
+        <br><br><header><h1>CHARTS</h1></header>
+        
+  <div class="wrapper">
+            <div class="main-content">
+                <div class="block-container">
+                    <div class="musicFilters clearfix">
+                        <div class="playAll">
+                            <strong class="title">CHARTS</strong> <span class=
+                            "chart-play"><i aria-hidden="true" class=
+                            "fa fa-play"></i> PLAY ALL</span>
+                        </div>
+                        <div class="chartsSort">
+                            <div class="music-sort-charts">
+                                <select class="hottestTracks">
+                                    <option value="0" selected="select">
+                                        Genre
+                                    </option>
+                                    <option value="1">
+                                        Tropical
+                                    </option>
+                                    <option value="2">
+                                        DnB
+                                    </option>
+                                    <option value="3">
+                                        Deep House
+                                    </option>
+                                    <option value="4">
+                                        Electro
+                                    </option>
+                                    <option value="5">
+                                        House
+                                    </option>
+                                    <option value="6">
+                                        Trance
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="music-sort-charts">
+                                <select class="date">
+                                    <option selected="selected" value="0">
+                                        Today
+                                    </option>
+                                    <option value="1">
+                                        This Week
+                                    </option>
+                                    <option value="2">
+                                        This Month
+                                    </option>
+                                    <option value="3">
+                                        This Year
+                                    </option>
+                                    <option value="4">
+                                        Last Year
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="block-container">
+                    <div class="block-layout">
+                        <ul class="chartsListView">
+                            
+                                <li class="chartsListEach">
+                                    <div class="listView chartsListTable">
+
+                                        <div class="ColumnListNumber listViewCol">
+                                            1
+                                        </div>
+
+                                        <div class="ColumnListImage listViewCol">
+                                        <div class="play-track-overlay">
+                                            <i aria-hidden="true" class=
+                                            "fa fa-play"></i>
+                                        </div><img src=
+                                        "images/songs/edx-missing.jpg" alt="song cover art">
+                                        </div>
+
+                                        <div class="ColumnListDetails listViewCol">
+                                            <div class="chartsTitle">
+                                                <div class="chartsTitleEach">
+                                                    <div class="trackTitleList">
+                                                        <a href="">Missing-</a>
+                                                    </div>
+                                                    <div class="brandColour">
+                                                        <a href="">EDX</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="chartsSocial">
+                                                <div class="container">
+                                                    <span class=
+                                                    "musicGenre">House</span>
+                                                    <div class="statsCounter">
+                                                    <span><i aria-hidden="true"
+                                                    class="fa fa-headphones"></i></span>
+                                                    <span class="stats">15,000</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                <li class="chartsListEach">
+                                    <div class="listView chartsListTable">
+
+                                        <div class="ColumnListNumber listViewCol">
+                                            2
+                                        </div>
+
+                                        <div class="ColumnListImage listViewCol">
+                                        <div class="play-track-overlay">
+                                            <i aria-hidden="true" class=
+                                            "fa fa-play"></i>
+                                        </div><img src=
+                                        "images/songs/ah-hollywood.jpg" alt="song cover art">
+                                        </div>
+
+                                        <div class="ColumnListDetails listViewCol">
+                                            <div class="chartsTitle">
+                                                <div class="chartsTitleEach">
+                                                    <div class="trackTitleList">
+                                                        <a href="">Hollywood-</a>
+                                                    </div>
+                                                    <div class="brandColour">
+                                                        <a href="">Afrojack & Hardwell</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="chartsSocial">
+                                                <div class="container">
+                                                    <span class=
+                                                    "musicGenre">Electro</span>
+                                                    <div class="statsCounter">
+                                                    <span><i aria-hidden="true"
+                                                    class="fa fa-headphones"></i></span>
+                                                    <span class="stats">23,000</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                <li class="chartsListEach">
+                                    <div class="listView chartsListTable">
+
+                                        <div class="ColumnListNumber listViewCol">
+                                            3
+                                        </div>
+
+                                        <div class="ColumnListImage listViewCol">
+                                        <div class="play-track-overlay">
+                                            <i aria-hidden="true" class=
+                                            "fa fa-play"></i>
+                                        </div><img src=
+                                        "images/songs/disclosure-caracal.jpg" alt="song cover art">
+                                        </div>
+
+                                        <div class="ColumnListDetails listViewCol">
+                                            <div class="chartsTitle">
+                                                <div class="chartsTitleEach">
+                                                    <div class="trackTitleList">
+                                                        <a href="">Caracal-</a>
+                                                    </div>
+                                                    <div class="brandColour">
+                                                        <a href="">Disclosure</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="chartsSocial">
+                                                <div class="container">
+                                                    <span class=
+                                                    "musicGenre">DnB</span>
+                                                    <div class="statsCounter">
+                                                    <span><i aria-hidden="true"
+                                                    class="fa fa-headphones"></i></span>
+                                                    <span class="stats">17,000</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                <li class="chartsListEach">
+                                    <div class="listView chartsListTable">
+
+                                        <div class="ColumnListNumber listViewCol">
+                                            4
+                                        </div>
+
+                                        <div class="ColumnListImage listViewCol">
+                                        <div class="play-track-overlay">
+                                            <i aria-hidden="true" class=
+                                            "fa fa-play"></i>
+                                        </div><img src=
+                                        "images/songs/kaskade-eyes.jpg" alt="song cover art">
+                                        </div>
+
+                                        <div class="ColumnListDetails listViewCol">
+                                            <div class="chartsTitle">
+                                                <div class="chartsTitleEach">
+                                                    <div class="trackTitleList">
+                                                        <a href="">Eyes-</a>
+                                                    </div>
+                                                    <div class="brandColour">
+                                                        <a href="">Kaskade</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="chartsSocial">
+                                                <div class="container">
+                                                    <span class=
+                                                    "musicGenre">Deep House</span>
+                                                    <div class="statsCounter">
+                                                    <span><i aria-hidden="true"
+                                                    class="fa fa-headphones"></i></span>
+                                                    <span class="stats">28,000</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                <li class="chartsListEach">
+                                    <div class="listView chartsListTable">
+
+                                        <div class="ColumnListNumber listViewCol">
+                                            5
+                                        </div>
+
+                                        <div class="ColumnListImage listViewCol">
+                                        <div class="play-track-overlay">
+                                            <i aria-hidden="true" class=
+                                            "fa fa-play"></i>
+                                        </div><img src=
+                                        "images/songs/autoerotique_ft._maxstyler-badman.jpg" alt="song cover art">
+                                        </div>
+
+                                        <div class="ColumnListDetails listViewCol">
+                                            <div class="chartsTitle">
+                                                <div class="chartsTitleEach">
+                                                    <div class="trackTitleList">
+                                                        <a href="">Badman-</a>
+                                                    </div>
+                                                    <div class="brandColour">
+                                                        <a href="">Autoerotique ft. Max Styler</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="chartsSocial">
+                                                <div class="container">
+                                                    <span class=
+                                                    "musicGenre">Electro</span>
+                                                    <div class="statsCounter">
+                                                    <span><i aria-hidden="true"
+                                                    class="fa fa-headphones"></i></span>
+                                                    <span class="stats">8,000</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                <li class="chartsListEach">
+                                    <div class="listView chartsListTable">
+
+                                        <div class="ColumnListNumber listViewCol">
+                                            6
+                                        </div>
+
+                                        <div class="ColumnListImage listViewCol">
+                                        <div class="play-track-overlay">
+                                            <i aria-hidden="true" class=
+                                            "fa fa-play"></i>
+                                        </div><img src=
+                                        "images/songs/paulvandyk-louder.jpg" alt="song cover art">
+                                        </div>
+
+                                        <div class="ColumnListDetails listViewCol">
+                                            <div class="chartsTitle">
+                                                <div class="chartsTitleEach">
+                                                    <div class="trackTitleList">
+                                                        <a href="">Louder-</a>
+                                                    </div>
+                                                    <div class="brandColour">
+                                                        <a href="">Paul Van Dyk</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="chartsSocial">
+                                                <div class="container">
+                                                    <span class=
+                                                    "musicGenre">Trance</span>
+                                                    <div class="statsCounter">
+                                                    <span><i aria-hidden="true"
+                                                    class="fa fa-headphones"></i></span>
+                                                    <span class="stats">13,000</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                <li class="chartsListEach">
+                                    <div class="listView chartsListTable">
+
+                                        <div class="ColumnListNumber listViewCol">
+                                            7
+                                        </div>
+
+                                        <div class="ColumnListImage listViewCol">
+                                        <div class="play-track-overlay">
+                                            <i aria-hidden="true" class=
+                                            "fa fa-play"></i>
+                                        </div><img src=
+                                        "images/songs/aboveandbeyond-alchemy.jpg" alt="song cover art">
+                                        </div>
+
+                                        <div class="ColumnListDetails listViewCol">
+                                            <div class="chartsTitle">
+                                                <div class="chartsTitleEach">
+                                                    <div class="trackTitleList">
+                                                        <a href="">Alchemy-</a>
+                                                    </div>
+                                                    <div class="brandColour">
+                                                        <a href="">Above & Beyond</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="chartsSocial">
+                                                <div class="container">
+                                                    <span class=
+                                                    "musicGenre">Trance</span>
+                                                    <div class="statsCounter">
+                                                    <span><i aria-hidden="true"
+                                                    class="fa fa-headphones"></i></span>
+                                                    <span class="stats">35,000</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                <li class="chartsListEach">
+                                    <div class="listView chartsListTable">
+
+                                        <div class="ColumnListNumber listViewCol">
+                                            8
+                                        </div>
+
+                                        <div class="ColumnListImage listViewCol">
+                                        <div class="play-track-overlay">
+                                            <i aria-hidden="true" class=
+                                            "fa fa-play"></i>
+                                        </div><img src=
+                                        "images/songs/nora_en_pure-sweetmelody.jpg" alt="song cover art">
+                                        </div>
+
+                                        <div class="ColumnListDetails listViewCol">
+                                            <div class="chartsTitle">
+                                                <div class="chartsTitleEach">
+                                                    <div class="trackTitleList">
+                                                        <a href="">Sweet Melody-</a>
+                                                    </div>
+                                                    <div class="brandColour">
+                                                        <a href="">Nora En Pure</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="chartsSocial">
+                                                <div class="container">
+                                                    <span class=
+                                                    "musicGenre">Tropical</span>
+                                                    <div class="statsCounter">
+                                                    <span><i aria-hidden="true"
+                                                    class="fa fa-headphones"></i></span>
+                                                    <span class="stats">8,000</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                <li class="chartsListEach">
+                                    <div class="listView chartsListTable">
+
+                                        <div class="ColumnListNumber listViewCol">
+                                            9
+                                        </div>
+
+                                        <div class="ColumnListImage listViewCol">
+                                        <div class="play-track-overlay">
+                                            <i aria-hidden="true" class=
+                                            "fa fa-play"></i>
+                                        </div><img src=
+                                        "images/songs/majorlazer-lean_on.png" alt="song cover art">
+                                        </div>
+
+                                        <div class="ColumnListDetails listViewCol">
+                                            <div class="chartsTitle">
+                                                <div class="chartsTitleEach">
+                                                    <div class="trackTitleList">
+                                                        <a href="">Lean On-</a>
+                                                    </div>
+                                                    <div class="brandColour">
+                                                        <a href="">Major Lazer</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="chartsSocial">
+                                                <div class="container">
+                                                    <span class=
+                                                    "musicGenre">Electro</span>
+                                                    <div class="statsCounter">
+                                                    <span><i aria-hidden="true"
+                                                    class="fa fa-headphones"></i></span>
+                                                    <span class="stats">40,000</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                <li class="chartsListEach">
+                                    <div class="listView chartsListTable">
+
+                                        <div class="ColumnListNumber listViewCol">
+                                            10
+                                        </div>
+
+                                        <div class="ColumnListImage listViewCol">
+                                        <div class="play-track-overlay">
+                                            <i aria-hidden="true" class=
+                                            "fa fa-play"></i>
+                                        </div><img src=
+                                        "images/songs/seeb-breathe.jpg" alt="song cover art">
+                                        </div>
+
+                                        <div class="ColumnListDetails listViewCol">
+                                            <div class="chartsTitle">
+                                                <div class="chartsTitleEach">
+                                                    <div class="trackTitleList">
+                                                        <a href="">Breathe-</a>
+                                                    </div>
+                                                    <div class="brandColour">
+                                                        <a href="">Seeb</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="chartsSocial">
+                                                <div class="container">
+                                                    <span class=
+                                                    "musicGenre">Deep House</span>
+                                                    <div class="statsCounter">
+                                                    <span><i aria-hidden="true"
+                                                    class="fa fa-headphones"></i></span>
+                                                    <span class="stats">23,000</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                              </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- NEWS -->
 
 
+        <section id="news" class="section news">
+           <br><br> <header><h1>NEWS</h1></header>
+           <div class="wrapper">
+           <div class="row">
+                   <div class="column" id="column1">
+                       <div class="blogBox">
+                           <div class="imageBox">
+                            <img src="images/news/articleImage.jpg" alt="Ultra Music Festival Image">
+                           </div>
+                           <div class="blogBoxContent">
+                              <div class="blogHeader">
+                                  <h1>
+                                      <a href="">Gallery Post</a>
+                                  </h1>
+                              </div> 
+                              <div class="admin-list clearfix">
+                                <ul>
+                                    <li><a href="">12 April 2016 /</a></li>
+                                    <li><a href="">By Admin</a></li>
+                                </ul>  
+                              </div>
+                              <!-- end admin-list -->
+                              <div class="blogParagraph"><p class="newsText">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.
+                              </p></div>
+                              <!-- end blogParagraph -->
+                              <div class="rmButton"><a href="">Read More</a></div>
+                           </div>
+                           <!-- End of blogBoxContent -->
+                       </div>
+                       <!-- end of blogBox -->
+                   </div> 
+                   <!-- end of column one  -->
+
+                       <div class="column" id="column2">
+                       <div class="blogBox">
+                           <div class="videoBox">
+                            <div class="fluid-width-video-wrapper">
+                              <iframe src="https://player.vimeo.com/video/161158039?color=ffffff&title=0&byline=0&portrait=0" width="100%" height="250" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+                            </div>
+                           </div>
+                           <div class="blogBoxContent">
+                              <div class="blogHeader">
+                                  <h1>
+                                      <a href="">Music Video Post</a>
+                                  </h1>
+                              </div> 
+                              <div class="admin-list clearfix">
+                                <ul>
+                                    <li><a href="">04 April 2016 /</a></li>
+                                    <li><a href=""> By Admin</a></li>
+                                </ul>  
+                              </div>
+                              <!-- end admin-list -->
+                              <div class="blogParagraph"><p class="newsText">
+                               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.   
+                              </p></div>
+                              <!-- end blogParagraph -->
+                              <div class="rmButton"><a href="">Read More</a></div>
+                           </div>
+                           <!-- End of blogBoxContent -->
+                       </div>
+                       <!-- end of blogBox -->
+                   </div> 
+                   <!-- end of column one  -->
+
+                    <div class="column" id="column3">
+                       <div class="blogBox">
+                           <div class="imageBox">
+                            <img src="images/news/Outlook.jpg" alt="Outlook Festival 2016 Image">
+                           </div>
+                           <div class="blogBoxContent">
+                              <div class="blogHeader">
+                                  <h1>
+                                      <a href="">Upcoming Events</a>
+                                  </h1>
+                              </div> 
+                              <div class="admin-list clearfix">
+                                <ul>
+                                    <li><a href="">08 April 2016 /</a></li>
+                                    <li><a href="">By Admin</a></li>
+                                </ul>  
+                              </div>
+                              <!-- end admin-list -->
+                              <div class="blogParagraph"><p class="newsText">
+                               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.   
+                              </p></div>
+                              <!-- end blogParagraph -->
+                              <div class="rmButton"><a href="">Read More</a></div>
+                           </div>
+                           <!-- End of blogBoxContent -->
+                       </div>
+                       <!-- end of blogBox -->
+                   </div> 
+                   <!-- end of column one  -->
+            </div>
+            <!-- Closing Row -->
+        </div>
+        <!-- Closing wrapper -->
+
+     </section>
 
 
-    <!---------------------------------- CONTACT US-------------------------------------------->
+<!-- CONTACT US -->
 
 
-        <section id="section contact" class="section contact">
+        <section id="contact" class="section contact">
             <br>
             <br>
             <header>
@@ -102,49 +1160,40 @@
                     <form id="contact-form" method="POST" action="success.html">
                         <div class="contact-form">
                             <div class="form-group">
-                                <label for="contactfullname"><strong></strong>
-                                </label>
+                                <label for="firstname"></label>
                                 <br>
-                                <input id="contactfullname" type="text" placeholder="Full Name" name="contactfullname" required >
-                                <span id="contactfullname-error"></span>
+                                <input id="firstname" type="text" placeholder="First Name" name="firstname" required minlength="2">
+                                <span id="firstname-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastname"></label>
+                                <br>
+                                <input id="lastname" type="text" placeholder="Last Name" name="lastname" required minlength="2">
+                                <span id="lastname-error"></span>
                             </div>
 
                             <div class="form-group">
-                                <label for="contactemail"><strong></strong>
-                                </label>
+                                <label for="email"></label>
                                 <br>
-                                <input id="contactemail" type="text" placeholder="Email Address" name="contactemail" required>
-                                <span id="contactemail-error"></span>
+                                <input id="email" type="email" placeholder="Email Address" name="email" required>
+                                <span id="email-error"></span>
                             </div>
 
                             <div class="form-group">
-                                <label for="message"><strong></strong>
-                                </label>
+                                <label for="message"></label>
                                 <br>
-                                <textarea id="message" name="message" rows="15" cols="40" placeholder="Your message here..." required minlength="10" maxLength="500"></textarea>
+                                <textarea id="message" name="message" rows="15" cols="40" placeholder="Your message here..." required minlength="10"></textarea>
+                                 <span id="message-error"></span>
                             </div>
-
-                        </div>
-
-                        <div class="button">
+                        
                             <div class="form-group">
-                                <input id= "button" type="submit" value="Send">
-                                <span id="message-error"></span>
+                               <button id="send-button" type="submit" class="button">Send</button>  
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
         </section>
-
-
-<!---------------------------------- PLAYLISTS -------------------------------------------->
-
-
-        <section id="section playlists" class="section playlists">
-           <br><br> <header><h1>PLAYLISTS</h1></header>
-        </section>
-
 
     </div><!-- /#content -->
 </div><!-- /.MAIN-->
