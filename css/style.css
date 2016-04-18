@@ -440,6 +440,8 @@ ul {
   vertical-align: middle;
   width: 50px;
   font-size: 25px;
+  font-family: 'Rajdhani', sans-serif;
+  text-align: center;
 }
 
 .listView .ColumnListImage {
@@ -953,7 +955,10 @@ iframe {
   font-size: 14px;
 }
 
-
+#goHomeButton {
+  padding-top: 0px;
+  
+}
 
 
 
@@ -1101,6 +1106,7 @@ iframe {
 p {
   text-align: -webkit-center;
   font-size: 16px;
+
 }
 
 input {

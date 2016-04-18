@@ -47,10 +47,10 @@ dfn {
   font-style: italic;
 }
 
-h1 {
+/*h1 {
   font-size: 2em;
   margin: .67em 0;
-}
+}*/
 
 mark {
   background: #ff0;
@@ -195,7 +195,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -2px;
 }
 
-.huge, h1 {
+.huge, /*h1*/ {
   font-size: 68px;
   line-height: 1.05;
   letter-spacing: -1px;
@@ -251,13 +251,13 @@ a:hover, a:focus {
   color: #d89993;
 }
 
-::selection {
+/*::selection {
   background: #fff498;
-}
+}*/
 
-::-moz-selection {
+/*::-moz-selection {
   background: #fff498;
-}
+}*/
 
 img::selection {
   background: transparent;
@@ -267,9 +267,9 @@ img::-moz-selection {
   background: transparent;
 }
 
-body {
+/*body {
   -webkit-tap-highlight-color: #fff498;
-}
+}*/
 
 body {
   background: #f6f6f8;
@@ -286,10 +286,17 @@ body {
   overflow: hidden;
 }
 
-h1 {
+/*h1 {
   margin: 0;
   padding: 1em 0 0;
   color: #f6f6c4;
+}*/
+
+h1 {
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    text-align: center;
+    margin: 0 auto;
 }
 
 h2 {
@@ -337,7 +344,7 @@ article {
   left: 50%;
   margin-left: -163px;
   border-radius: 50%;
-  background: url(../img/spinner-outer.png) center center no-repeat #32302e;
+  background: url(../img/spinner-outer.png) center center no-repeat #080D33;
 }
 .playing .spinner-outer {
   -webkit-animation: spin-cw 5s linear infinite;
@@ -479,4 +486,107 @@ article {
     -o-transform: scale(1);
     transform: scale(1);
   }
+}
+
+
+
+
+
+@media only screen and (min-width: 250px) 
+{ 
+
+.spinner-wrap, .spinner-wrap.pulse {
+
+margin: 0 auto;
+top: 0px;
+left: initial;
+position: relative;
+
+}
+
+
+.spinner-outer {
+  width:  100%;
+  left: 0px;
+  margin: 0 auto;
+}
+
+
+}
+
+
+@media only screen and (min-device-width : 250px) and (max-device-width : 749px) 
+ 
+{ 
+
+.spinner-wrap, .spinner-wrap.pulse {
+
+margin: 0 auto;
+top: 0px;
+left: initial;
+position: relative;
+
+}
+
+
+.spinner-outer {
+  width:  100%;
+  left: 0px;
+  margin: 0 auto;
+}
+
+
+}
+
+
+@media only screen and (min-device-width : 749px) and (max-device-width : 1023px) 
+ 
+{ 
+
+.spinner-wrap, .spinner-wrap.pulse {
+
+margin: 0 auto;
+top: 0px;
+width: 491px;
+position: relative;
+
+
+}
+
+
+.spinner-outer {
+  width:  491px;
+  height: 491px;
+  left: 0px;
+  margin: 0 auto;
+}
+
+
+.spinner-center {
+  height: 300px;
+  width: 300px;
+  left:40%;
+  top:  59%;
+}
+
+.play-sprite {
+  
+  width: 105px;
+  top: 75%;
+}
+
+
+#goHomeButton {
+  position: absolute;
+  padding-top: 27%;
+}
+
+.button1 {
+
+
+font-size: 24px;
+padding: 15px 0px 15px 0px;
+}
+
+
 }
